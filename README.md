@@ -245,17 +245,15 @@ src/main/resources/application.properties
 
 ---
 
-## 👨‍💻 Team
 
-**V. Chandra Sekhar Reddy** |
+## 👥 Team Members
 
-**V. Avinash** |
+- **V. Chandra Sekhar Reddy**
+- **V. Avinash**
+- **G. Chandu**
+- **M. Ajay**
+- **P. Ravi Teja**
 
-**G. Chandu** |
-
-**M. Ajay** |
-
-**P. Ravi Teja**
 
 B.Tech – Computer Science and Engineering (Artificial Intelligence)
 
