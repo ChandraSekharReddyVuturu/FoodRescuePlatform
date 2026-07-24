@@ -1,0 +1,18 @@
+table{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+thead{
+    background:#F4B400;
+    color:#fff;
+}
+
+tbody tr:nth-child(even){
+    background:#FFF8E1;
+}
+
+tbody tr:hover{
+    background:#FFE082;
+}

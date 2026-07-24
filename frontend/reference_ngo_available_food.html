@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Available Food | Food Rescue Platform</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="/css/ngo/available-food.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-hand-holding-heart"></i>
+
+            <h2>NGO Panel</h2>
+
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="/ngo-dashboard">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Dashboard
+
+                </a>
+            </li>
+
+            <li class="active">
+
+                <a href="/available-food">
+
+                    <i class="fa-solid fa-bowl-food"></i>
+
+                    Available Food
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="/received-food">
+
+                    <i class="fa-solid fa-box-open"></i>
+
+                    Received Food
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="/ngo-profile">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Profile
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="#"
+                   onclick="logout()">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main -->
+
+    <main class="main-content">
+
+        <div class="topbar">
+
+            <h1>Available Food Donations</h1>
+
+            <span id="ngoName"></span>
+
+        </div>
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>Restaurant</th>
+
+                    <th>Food</th>
+
+                    <th>Type</th>
+
+                    <th>Quantity</th>
+
+                    <th>Meals</th>
+
+                    <th>Expiry</th>
+
+                    <th>Status</th>
+
+                    <th>Action</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody id="foodTableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="/js/ngo/available-food.js"></script>
+
+</body>
+
+</html>

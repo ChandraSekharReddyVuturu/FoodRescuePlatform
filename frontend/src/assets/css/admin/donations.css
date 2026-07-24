@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+.admin-donations * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif !important;
+    transition: all 0.3s ease;
+}
+
+.admin-donations {
+    background: #FFFDF7;
+    color: #2F3A52;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.admin-donations .dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.admin-donations .sidebar {
+    width: 270px;
+    background: linear-gradient(180deg, #FFD54F 0%, #FFB300 50%, #E6A700 100%);
+    color: #FFFFFF;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    box-shadow: 6px 0 24px rgba(255, 193, 7, 0.18);
+    z-index: 1000;
+}
+
+.admin-donations .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 28px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.admin-donations .logo i {
+    font-size: 34px !important;
+    color: #FFFFFF !important;
+}
+
+.admin-donations .logo h2 {
+    font-size: 25px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.admin-donations .sidebar ul {
+    list-style: none;
+    padding: 25px 0;
+}
+
+.admin-donations .sidebar ul li {
+    margin: 10px 15px;
+}
+
+.admin-donations .sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 18px;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.35s ease;
+}
+
+.admin-donations .sidebar ul li a:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateX(6px);
+}
+
+.admin-donations .sidebar ul li.active a {
+    background: #FFFFFF;
+    color: #C88700;
+    font-weight: 700;
+    box-shadow: 0 8px 18px rgba(244, 180, 0, 0.30);
+}
+
+.admin-donations .sidebar ul li i {
+    width: 24px;
+    text-align: center;
+}
+
+.admin-donations .main-content {
+    flex: 1;
+    margin-left: 270px;
+    padding: 35px;
+    background: #FFFDF7;
+}
+
+.admin-donations .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid #F4D06F;
+}
+
+.admin-donations .topbar h1 {
+    color: #C88700;
+    font-size: 34px;
+    font-weight: 800;
+}
+
+.admin-donations .topbar p {
+    color: #6B7280;
+    margin-top: 8px;
+}
+
+.admin-donations .profile-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD54F, #FFC107);
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    box-shadow: 0 8px 18px rgba(255, 193, 7, 0.25);
+}
+
+/* =====================================================
+                STATISTICS CARDS (CSS GRID)
+===================================================== */
+
+.admin-donations .cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-bottom: 35px;
+}
+
+.admin-donations .card {
+    background: #FFFFFF;
+    border: 1px solid #F4D06F;
+    border-radius: 22px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 10px 25px rgba(255, 193, 7, 0.18);
+    transition: all 0.3s ease;
+}
+
+.admin-donations .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(255, 193, 7, 0.28);
+    border-color: #FFC107;
+}
+
+.admin-donations .card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD54F, #FFC107);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.admin-donations .card-icon i {
+    font-size: 26px !important;
+    color: #FFFFFF !important;
+}
+
+.admin-donations .card h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #6B7280;
+    margin-bottom: 4px;
+}
+
+.admin-donations .card h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #2F3A52;
+}
+
+/* =====================================================
+                SECTION CARD & TABLES
+===================================================== */
+
+.admin-donations .section-card {
+    background: #FFFFFF;
+    border: 1px solid #F4D06F;
+    border-radius: 22px;
+    padding: 28px;
+    box-shadow: 0 12px 28px rgba(255, 193, 7, 0.15);
+}
+
+.admin-donations .section-header {
+    margin-bottom: 20px;
+}
+
+.admin-donations .section-header h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2F3A52;
+}
+
+.admin-donations .section-header p {
+    font-size: 14px;
+    color: #6B7280;
+    margin-top: 4px;
+}
+
+.admin-donations .table-container {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 16px;
+    border: 1px solid #F4D06F;
+}
+
+.admin-donations table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 850px;
+}
+
+.admin-donations thead {
+    background: linear-gradient(135deg, #FFD54F, #FFB300);
+    color: #FFFFFF;
+}
+
+.admin-donations thead th {
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.admin-donations tbody tr {
+    border-bottom: 1px solid #FFE082;
+    transition: background 0.2s ease;
+}
+
+.admin-donations tbody tr:nth-child(even) {
+    background: #FFFDF7;
+}
+
+.admin-donations tbody tr:hover {
+    background: #FFF8E1;
+}
+
+.admin-donations tbody td {
+    padding: 16px 20px;
+    font-size: 15px;
+    color: #2F3A52;
+}
+
+.admin-donations .status {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.admin-donations .status.completed,
+.admin-donations .status.delivered {
+    background: #DEF7EC;
+    color: #03543F;
+}
+
+.admin-donations .status.picked_up,
+.admin-donations .status.picked {
+    background: #E0F2FE;
+    color: #0369A1;
+}
+
+.admin-donations .status.pending,
+.admin-donations .status.available,
+.admin-donations .status.assigned {
+    background: #FEF08A;
+    color: #854D0E;
+}
+
+.admin-donations .status.expired {
+    background: #FEE2E2;
+    color: #991B1B;
+}
+
+/* =====================================================
+                RESPONSIVE BREAKPOINTS
+===================================================== */
+
+@media(max-width: 1200px) {
+    .admin-donations .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 992px) {
+    .admin-donations .sidebar {
+        width: 90px;
+    }
+    .admin-donations .logo h2 {
+        display: none;
+    }
+    .admin-donations .sidebar ul li a {
+        justify-content: center;
+    }
+    .admin-donations .main-content {
+        margin-left: 90px;
+    }
+}
+
+@media(max-width: 600px) {
+    .admin-donations .cards-container {
+        grid-template-columns: 1fr;
+    }
+    .admin-donations .sidebar {
+        display: none;
+    }
+    .admin-donations .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+}
+
+/* Font Awesome Font Protection */
+.admin-donations i[class*="fa-"],
+.admin-donations .fa-solid,
+.admin-donations .fas,
+.admin-donations .fa-regular,
+.admin-donations .far,
+.admin-donations .fa-brands,
+.admin-donations .fab,
+.admin-donations .fa {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "FontAwesome" !important;
+    font-weight: 900 !important;
+}

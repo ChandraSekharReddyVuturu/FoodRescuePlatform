@@ -1,0 +1,26 @@
+.btn-primary{
+    background: linear-gradient(135deg,#F4B400,#FFD54F);
+    color:#fff;
+    border:none;
+    border-radius:12px;
+    padding:12px 24px;
+    font-weight:600;
+    transition:.3s;
+    box-shadow:0 8px 18px rgba(244,180,0,.25);
+}
+
+.btn-primary:hover{
+    background:linear-gradient(135deg,#D89B00,#F4B400);
+    transform:translateY(-2px);
+}
+
+.btn-secondary{
+    background:#FFF3CD;
+    color:#D89B00;
+    border:1px solid #F4B400;
+}
+
+.btn-danger{
+    background:#E53935;
+    color:#fff;
+}

@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+.admin-ngos * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif !important;
+    transition: all 0.3s ease;
+}
+
+.admin-ngos {
+    background: #FFFDF7;
+    color: #2F3A52;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.admin-ngos .dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.admin-ngos .sidebar {
+    width: 270px;
+    background: linear-gradient(180deg, #FFD54F 0%, #FFB300 50%, #E6A700 100%);
+    color: #FFFFFF;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    box-shadow: 6px 0 24px rgba(255, 193, 7, 0.18);
+    z-index: 1000;
+}
+
+.admin-ngos .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 28px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.admin-ngos .logo i {
+    font-size: 34px !important;
+    color: #FFFFFF !important;
+}
+
+.admin-ngos .logo h2 {
+    font-size: 25px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.admin-ngos .sidebar ul {
+    list-style: none;
+    padding: 25px 0;
+}
+
+.admin-ngos .sidebar ul li {
+    margin: 10px 15px;
+}
+
+.admin-ngos .sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 18px;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.35s ease;
+}
+
+.admin-ngos .sidebar ul li a:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateX(6px);
+}
+
+.admin-ngos .sidebar ul li.active a {
+    background: #FFFFFF;
+    color: #C88700;
+    font-weight: 700;
+    box-shadow: 0 8px 18px rgba(244, 180, 0, 0.30);
+}
+
+.admin-ngos .sidebar ul li i {
+    width: 24px;
+    text-align: center;
+}
+
+.admin-ngos .main-content {
+    flex: 1;
+    margin-left: 270px;
+    padding: 35px;
+    background: #FFFDF7;
+}
+
+.admin-ngos .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid #F4D06F;
+}
+
+.admin-ngos .topbar h1 {
+    color: #C88700;
+    font-size: 34px;
+    font-weight: 800;
+}
+
+.admin-ngos .topbar p {
+    color: #6B7280;
+    margin-top: 8px;
+}
+
+.admin-ngos .profile-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD54F, #FFC107);
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    box-shadow: 0 8px 18px rgba(255, 193, 7, 0.25);
+}
+
+/* =====================================================
+                STATISTICS CARDS (CSS GRID)
+===================================================== */
+
+.admin-ngos .cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-bottom: 35px;
+}
+
+.admin-ngos .card {
+    background: #FFFFFF;
+    border: 1px solid #F4D06F;
+    border-radius: 22px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 10px 25px rgba(255, 193, 7, 0.18);
+    transition: all 0.3s ease;
+}
+
+.admin-ngos .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(255, 193, 7, 0.28);
+    border-color: #FFC107;
+}
+
+.admin-ngos .card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD54F, #FFC107);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.admin-ngos .card-icon i {
+    font-size: 26px !important;
+    color: #FFFFFF !important;
+}
+
+.admin-ngos .card h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #6B7280;
+    margin-bottom: 4px;
+}
+
+.admin-ngos .card h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #2F3A52;
+}
+
+/* =====================================================
+                SECTION CARD & TABLES
+===================================================== */
+
+.admin-ngos .section-card {
+    background: #FFFFFF;
+    border: 1px solid #F4D06F;
+    border-radius: 22px;
+    padding: 28px;
+    box-shadow: 0 12px 28px rgba(255, 193, 7, 0.15);
+}
+
+.admin-ngos .section-header {
+    margin-bottom: 20px;
+}
+
+.admin-ngos .section-header h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2F3A52;
+}
+
+.admin-ngos .section-header p {
+    font-size: 14px;
+    color: #6B7280;
+    margin-top: 4px;
+}
+
+.admin-ngos .table-container {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 16px;
+    border: 1px solid #F4D06F;
+}
+
+.admin-ngos table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 850px;
+}
+
+.admin-ngos thead {
+    background: linear-gradient(135deg, #FFD54F, #FFB300);
+    color: #FFFFFF;
+}
+
+.admin-ngos thead th {
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.admin-ngos tbody tr {
+    border-bottom: 1px solid #FFE082;
+    transition: background 0.2s ease;
+}
+
+.admin-ngos tbody tr:nth-child(even) {
+    background: #FFFDF7;
+}
+
+.admin-ngos tbody tr:hover {
+    background: #FFF8E1;
+}
+
+.admin-ngos tbody td {
+    padding: 16px 20px;
+    font-size: 15px;
+    color: #2F3A52;
+}
+
+.admin-ngos .status {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.admin-ngos .status.approved,
+.admin-ngos .status.active {
+    background: #DEF7EC;
+    color: #03543F;
+}
+
+.admin-ngos .status.pending {
+    background: #FEF08A;
+    color: #854D0E;
+}
+
+.admin-ngos .status.blocked,
+.admin-ngos .status.rejected {
+    background: #FEE2E2;
+    color: #991B1B;
+}
+
+/* =====================================================
+                ACTION BUTTONS
+===================================================== */
+
+.admin-ngos .action-btn {
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: none;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-ngos .approve-btn {
+    background: #10B981;
+    color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+}
+
+.admin-ngos .approve-btn:hover {
+    background: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
+}
+
+.admin-ngos .block-btn {
+    background: #EF4444;
+    color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+}
+
+.admin-ngos .block-btn:hover {
+    background: #DC2626;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(239, 68, 68, 0.35);
+}
+
+/* =====================================================
+                RESPONSIVE BREAKPOINTS
+===================================================== */
+
+@media(max-width: 1200px) {
+    .admin-ngos .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 992px) {
+    .admin-ngos .sidebar {
+        width: 90px;
+    }
+    .admin-ngos .logo h2 {
+        display: none;
+    }
+    .admin-ngos .sidebar ul li a {
+        justify-content: center;
+    }
+    .admin-ngos .main-content {
+        margin-left: 90px;
+    }
+}
+
+@media(max-width: 600px) {
+    .admin-ngos .cards-container {
+        grid-template-columns: 1fr;
+    }
+    .admin-ngos .sidebar {
+        display: none;
+    }
+    .admin-ngos .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+}
+
+/* Font Awesome Font Protection */
+.admin-ngos i[class*="fa-"],
+.admin-ngos .fa-solid,
+.admin-ngos .fas,
+.admin-ngos .fa-regular,
+.admin-ngos .far,
+.admin-ngos .fa-brands,
+.admin-ngos .fab,
+.admin-ngos .fa {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "FontAwesome" !important;
+    font-weight: 900 !important;
+}

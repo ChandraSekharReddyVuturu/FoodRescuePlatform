@@ -1,0 +1,1161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+.restaurant-dashboard * {
+
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+.restaurant-dashboard .dashboard {
+
+
+    background:#FFF9F0;
+    color:#333;
+    overflow-x:hidden;
+}
+.restaurant-dashboard .dashboard {
+
+
+    display:flex;
+    min-height:100vh;
+}
+.restaurant-sidebar {
+
+
+
+    width:270px;
+
+    background:linear-gradient(
+        180deg,
+        #FFD54F 0%,
+        #F4B400 45%,
+        #E6A700 100%
+    );
+
+    color:#FFFFFF;
+
+    display:flex;
+
+    flex-direction:column;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+    bottom:0;
+
+    box-shadow:6px 0 24px rgba(0,0,0,.10);
+
+    z-index:1000;
+
+}
+.restaurant-dashboard .logo {
+
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:28px;
+
+    border-bottom:1px solid rgba(255,255,255,.25);
+
+}
+.restaurant-dashboard .logo i {
+
+
+
+    font-size:34px;
+
+    color:#FFFFFF;
+
+}
+.restaurant-dashboard .logo h2 {
+
+
+
+    font-size:25px;
+
+    font-weight:700;
+
+    color:#FFFFFF;
+
+}
+.restaurant-dashboard .menu {
+
+
+
+    list-style:none;
+
+    padding:25px 0;
+
+}
+.restaurant-dashboard .menu li {
+
+
+
+    margin:10px 15px;
+
+}
+.restaurant-dashboard .menu li a {
+
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px 18px;
+
+    color:#FFFFFF;
+
+    text-decoration:none;
+
+    border-radius:12px;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    transition:.35s;
+
+}
+.restaurant-dashboard .menu li a:hover {
+
+
+
+    background:rgba(255,255,255,.25);
+
+    transform:translateX(6px);
+
+    box-shadow:0 6px 18px rgba(255,255,255,.15);
+
+}
+.restaurant-dashboard .menu li.active a {
+
+
+
+    background:#FFFFFF;
+
+    color:#C88700;
+
+    font-weight:600;
+
+    box-shadow:0 8px 18px rgba(244,180,0,.30);
+
+}
+.restaurant-dashboard .menu li i {
+
+
+
+    width:24px;
+
+    text-align:center;
+
+    font-size:18px;
+
+}
+.restaurant-dashboard .content {
+
+
+
+    flex:1;
+
+    margin-left:270px;
+
+    padding:35px;
+
+    background:#FFF9F0;
+
+}
+.restaurant-dashboard .topbar {
+
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+.restaurant-dashboard .topbar h1 {
+
+
+
+    font-size:34px;
+
+    color:#C88700;
+
+    font-weight:800;
+
+    margin-bottom:6px;
+
+}
+.restaurant-dashboard .topbar p {
+
+
+
+    color:#6B7280;
+
+    font-size:15px;
+
+}
+.restaurant-dashboard .top-right {
+
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+.restaurant-dashboard .top-right img {
+
+
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:50%;
+
+    border:3px solid #F4B400;
+
+    object-fit:cover;
+
+    box-shadow:0 8px 18px rgba(244,180,0,.20);
+
+}
+.restaurant-dashboard #notificationBtn {
+
+
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#FFFFFF;
+
+    box-shadow:0 8px 18px rgba(244,180,0,.18);
+
+    cursor:pointer;
+
+    position:relative;
+
+    transition:.35s;
+
+}
+.restaurant-dashboard #notificationBtn:hover {
+
+
+
+    transform:translateY(-3px);
+
+}
+.restaurant-dashboard #notificationBtn i {
+
+
+
+    color:#C88700;
+
+    font-size:18px;
+
+}
+.restaurant-dashboard #notificationCount {
+
+
+
+    position:absolute;
+
+    top:-5px;
+
+    right:-5px;
+
+    width:22px;
+
+    height:22px;
+
+    border-radius:50%;
+
+    background:#E53935;
+
+    color:#FFFFFF;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+.restaurant-dashboard .cards {
+
+
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+.restaurant-dashboard .card {
+
+
+
+    background:#FFFFFF;
+
+    border-radius:20px;
+
+    padding:28px;
+
+    border:1px solid #FFE082;
+
+    box-shadow:0 12px 28px rgba(244,180,0,.15);
+
+    transition:.35s;
+
+    animation:fadeUp .7s ease;
+
+}
+.restaurant-dashboard .card:hover {
+
+
+
+    transform:translateY(-8px);
+
+    box-shadow:0 22px 45px rgba(244,180,0,.28);
+
+}
+.restaurant-dashboard .card:nth-child(1) i {
+
+
+
+    background:#FFF8E1;
+    color:#F4B400;
+
+}
+.restaurant-dashboard .card:nth-child(2) i {
+
+
+
+    background:#E8F5E9;
+    color:#2E7D32;
+
+}
+.restaurant-dashboard .card:nth-child(3) i {
+
+
+
+    background:#E3F2FD;
+    color:#1565C0;
+
+}
+.restaurant-dashboard .card:nth-child(4) i {
+
+
+
+    background:#FCE4EC;
+    color:#AD1457;
+
+}
+.restaurant-dashboard .card i {
+
+
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+    margin-bottom:20px;
+
+}
+.restaurant-dashboard .card h2 {
+
+
+
+    font-size:34px;
+
+    color:#1E293B;
+
+    margin-bottom:8px;
+
+}
+.restaurant-dashboard .card p {
+
+
+
+    color:#64748B;
+
+    font-size:15px;
+
+}
+.restaurant-dashboard .actions {
+
+
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+    margin-top:35px;
+
+    margin-bottom:35px;
+
+}
+.restaurant-dashboard .action {
+
+
+
+    background:#FFFFFF;
+
+    border-radius:20px;
+
+    padding:30px 20px;
+
+    text-decoration:none;
+
+    color:#333;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:18px;
+
+    border:1px solid #FFE082;
+
+    box-shadow:0 12px 28px rgba(244,180,0,.15);
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+}
+.restaurant-dashboard .action:hover {
+
+
+
+    transform:translateY(-8px);
+
+    background:linear-gradient(
+        135deg,
+        #FFD54F,
+        #F4B400
+    );
+
+    color:#FFFFFF;
+
+    box-shadow:0 22px 45px rgba(244,180,0,.30);
+
+}
+.restaurant-dashboard .action i {
+
+
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#FFF8E1;
+
+    color:#C88700;
+
+    font-size:28px;
+
+    transition:.35s;
+
+}
+.restaurant-dashboard .action:hover i {
+
+
+
+    background:#FFFFFF;
+
+    color:#F4B400;
+
+}
+.restaurant-dashboard .action span {
+
+
+
+    font-size:16px;
+
+    font-weight:600;
+
+    text-align:center;
+
+}
+.restaurant-dashboard .table-card {
+
+
+
+    background:#FFFFFF;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    margin-bottom:30px;
+
+    border:1px solid #FFE082;
+
+    box-shadow:0 12px 28px rgba(244,180,0,.15);
+
+    overflow-x:auto;
+
+    animation:fadeUp .9s ease;
+
+}
+.restaurant-dashboard .table-card:hover {
+
+
+
+    box-shadow:0 20px 42px rgba(244,180,0,.22);
+
+}
+.restaurant-dashboard .table-header {
+
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+.restaurant-dashboard .table-header h2 {
+
+
+
+    color:#C88700;
+
+    font-size:24px;
+
+    font-weight:700;
+
+}
+.restaurant-dashboard table {
+
+
+
+    width:100%;
+
+    min-width:750px;
+
+    border-collapse:collapse;
+
+}
+.restaurant-dashboard thead {
+
+
+
+    background:linear-gradient(
+        90deg,
+        #FFE082,
+        #FFD54F
+    );
+
+}
+.restaurant-dashboard thead th {
+
+
+
+    padding:18px;
+
+    text-align:left;
+
+    color:#7A5200;
+
+    font-size:15px;
+
+    font-weight:700;
+
+}
+.restaurant-dashboard tbody td {
+
+
+
+    padding:18px;
+
+    border-bottom:1px solid #F1F5F9;
+
+    color:#475569;
+
+    font-size:15px;
+
+}
+.restaurant-dashboard tbody tr {
+
+
+
+    transition:.3s;
+
+}
+.restaurant-dashboard tbody tr:nth-child(even) {
+
+
+
+    background:#FFFDF7;
+
+}
+.restaurant-dashboard tbody tr:hover {
+
+
+
+    background:#FFF8DC;
+
+}
+.restaurant-dashboard .status {
+
+
+
+    display:inline-block;
+
+    padding:8px 15px;
+
+    border-radius:25px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+.restaurant-dashboard .status.pending {
+
+
+
+    background:#FFF3CD;
+
+    color:#B45309;
+
+}
+.restaurant-dashboard .status.accepted {
+
+
+
+    background:#DCFCE7;
+
+    color:#15803D;
+
+}
+.restaurant-dashboard .status.completed {
+
+
+
+    background:#DBEAFE;
+
+    color:#1D4ED8;
+
+}
+.restaurant-dashboard .status.rejected {
+
+
+
+    background:#FEE2E2;
+
+    color:#DC2626;
+
+}
+.restaurant-dashboard .empty {
+
+
+
+    text-align:center;
+
+    color:#94A3B8;
+
+    padding:40px;
+
+    font-size:15px;
+
+}
+@media(max-width:1200px) {
+.restaurant-dashboard .cards {
+
+
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+.restaurant-dashboard .actions {
+
+
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+}
+@media(max-width:992px) {
+.restaurant-sidebar {
+
+
+
+        width:90px;
+
+    }
+.restaurant-dashboard .logo h2 {
+
+
+
+        display:none;
+
+    }
+.restaurant-dashboard .menu li a {
+
+
+
+        justify-content:center;
+
+        font-size:0;
+
+    }
+.restaurant-dashboard .menu li i {
+
+
+
+        font-size:18px;
+
+    }
+.restaurant-dashboard .content {
+
+
+
+        margin-left:90px;
+
+    }
+}
+@media(max-width:768px) {
+.restaurant-sidebar {
+
+
+
+        display:none;
+
+    }
+.restaurant-dashboard .content {
+
+
+
+        margin-left:0;
+
+        padding:20px;
+
+    }
+.restaurant-dashboard .topbar {
+
+
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+
+    }
+.restaurant-dashboard .top-right {
+
+
+
+        width:100%;
+
+        justify-content:space-between;
+
+    }
+.restaurant-dashboard .cards {
+
+
+
+        grid-template-columns:1fr;
+
+    }
+.restaurant-dashboard .actions {
+
+
+
+        grid-template-columns:1fr;
+
+    }
+}
+@media(max-width:480px) {
+.restaurant-dashboard .content {
+
+
+
+        padding:15px;
+
+    }
+.restaurant-dashboard .topbar h1 {
+
+
+
+        font-size:28px;
+
+    }
+}
+@keyframes fadeUp {
+
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+.restaurant-dashboard .action::before {
+
+
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:0;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.25);
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    transition:.6s;
+
+}
+.restaurant-dashboard .action:hover::before {
+
+
+
+    width:320px;
+
+    height:320px;
+
+}
+.restaurant-dashboard ::-webkit-scrollbar {
+
+
+
+    width:8px;
+
+    height:8px;
+
+}
+.restaurant-dashboard ::-webkit-scrollbar-track {
+
+
+
+    background:#FFF8E1;
+
+}
+.restaurant-dashboard ::-webkit-scrollbar-thumb {
+
+
+
+    background:linear-gradient(
+        #FFD54F,
+        #E6A700
+    );
+
+    border-radius:20px;
+
+}
+.restaurant-dashboard ::-webkit-scrollbar-thumb:hover {
+
+
+
+    background:#C88700;
+
+}
+.restaurant-dashboard ::selection {
+
+
+
+    background:#F4B400;
+
+    color:#FFFFFF;
+
+}
+.restaurant-dashboard * {
+
+
+
+    transition:
+        background-color .3s,
+        color .3s,
+        box-shadow .3s,
+        transform .3s;
+
+}
+
+/* =====================================================
+            RESTAURANT MODULE SCOPED OVERRIDES
+===================================================== */
+.restaurant-dashboard i[class*="fa-"],
+.restaurant-dashboard .fa-solid,
+.restaurant-dashboard .fas,
+.restaurant-dashboard .fa-regular,
+.restaurant-dashboard .far,
+.restaurant-dashboard .fa-brands,
+.restaurant-dashboard .fab,
+.restaurant-dashboard .fa {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "FontAwesome" !important;
+    font-weight: 900 !important;
+}
+
+.restaurant-sidebar {
+    width: 270px !important;
+    background: linear-gradient(180deg, #FFD54F 0%, #F4B400 45%, #E6A700 100%) !important;
+    color: #FFFFFF !important;
+    display: flex !important;
+    flex-direction: column !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    box-shadow: 6px 0 24px rgba(0,0,0,.10) !important;
+    z-index: 1000 !important;
+}
+
+.restaurant-sidebar .logo {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+    padding: 28px !important;
+    border-bottom: 1px solid rgba(255,255,255,.25) !important;
+}
+
+.restaurant-sidebar .logo i {
+    font-size: 34px !important;
+    color: #FFFFFF !important;
+}
+
+.restaurant-sidebar .logo h2 {
+    font-size: 25px !important;
+    font-weight: 700 !important;
+    color: #FFFFFF !important;
+}
+
+.restaurant-sidebar .menu {
+    list-style: none !important;
+    padding: 25px 0 !important;
+}
+
+.restaurant-sidebar .menu li {
+    margin: 10px 15px !important;
+}
+
+.restaurant-sidebar .menu li a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+    padding: 15px 18px !important;
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+    border-radius: 12px !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    transition: .35s !important;
+}
+
+.restaurant-sidebar .menu li a:hover {
+    background: rgba(255,255,255,.25) !important;
+    transform: translateX(6px) !important;
+    box-shadow: 0 6px 18px rgba(255,255,255,.15) !important;
+}
+
+.restaurant-sidebar .menu li.active a {
+    background: #FFFFFF !important;
+    color: #C88700 !important;
+    font-weight: 600 !important;
+    box-shadow: 0 8px 18px rgba(244,180,0,.30) !important;
+}
+
+.restaurant-dashboard input[type="text"],
+.restaurant-dashboard input[type="number"],
+.restaurant-dashboard input[type="email"],
+.restaurant-dashboard input[type="tel"],
+.restaurant-dashboard input[type="datetime-local"],
+.restaurant-dashboard select {
+    height: 64px !important;
+    border-radius: 18px !important;
+    border: 2px solid #FFE082 !important;
+    font-size: 16px !important;
+    color: #374151 !important;
+    background: #FFFFFF !important;
+    outline: none !important;
+    transition: border-color .35s, box-shadow .35s !important;
+    box-sizing: border-box !important;
+}
+
+.restaurant-dashboard textarea {
+    border-radius: 18px !important;
+    border: 2px solid #FFE082 !important;
+    padding: 15px 20px !important;
+    font-size: 16px !important;
+    color: #374151 !important;
+    background: #FFFFFF !important;
+    outline: none !important;
+    box-sizing: border-box !important;
+}
+
+.restaurant-dashboard .card,
+.restaurant-dashboard .stat-card,
+.restaurant-dashboard .info-card,
+.restaurant-dashboard .form-card,
+.restaurant-dashboard .profile-card,
+.restaurant-dashboard .table-card {
+    border-radius: 22px !important;
+    box-shadow: 0 10px 30px rgba(244, 180, 0, 0.15) !important;
+    transition: transform .35s, box-shadow .35s !important;
+}
+
+.restaurant-dashboard table thead {
+    background: linear-gradient(90deg, #FFE082, #FFD54F) !important;
+}
+
+.restaurant-dashboard table thead th {
+    padding: 18px !important;
+    text-align: left !important;
+    color: #7A5200 !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+}
+
+.restaurant-dashboard table tbody tr {
+    border-bottom: 1px solid #FFF3D1 !important;
+    transition: .3s !important;
+}
+
+.restaurant-dashboard table tbody tr:hover {
+    background: #FFFDF7 !important;
+}
+
+.restaurant-dashboard table tbody td {
+    padding: 18px !important;
+    font-size: 14px !important;
+    color: #374151 !important;
+}
+
+.restaurant-dashboard .status {
+    display: inline-block !important;
+    padding: 6px 16px !important;
+    border-radius: 20px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+}
+
+.restaurant-dashboard .status.available,
+.restaurant-dashboard .status.active {
+    background: #DCFCE7 !important;
+    color: #16A34A !important;
+}
+
+.restaurant-dashboard .status.accepted {
+    background: #DBEAFE !important;
+    color: #2563EB !important;
+}
+
+.restaurant-dashboard .status.completed,
+.restaurant-dashboard .status.delivered {
+    background: #EDE9FE !important;
+    color: #7C3AED !important;
+}
+
+.restaurant-dashboard .status.expired {
+    background: #FCE7F3 !important;
+    color: #BE185D !important;
+}
+
+.restaurant-dashboard .action-btn {
+    width: 42px !important;
+    height: 42px !important;
+    border: none !important;
+    border-radius: 10px !important;
+    cursor: pointer !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    color: #FFFFFF !important;
+    transition: .35s !important;
+}
+
+.restaurant-dashboard .view-btn {
+    background: #1565C0 !important;
+    color: #FFFFFF !important;
+}
+
+.restaurant-dashboard .edit-btn {
+    background: #2E7D32 !important;
+    color: #FFFFFF !important;
+}
+
+.restaurant-dashboard .delete-btn {
+    background: #E53935 !important;
+    color: #FFFFFF !important;
+}

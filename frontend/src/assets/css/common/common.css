@@ -1,0 +1,26 @@
+/* Font Awesome Font Family Global Protection */
+i[class*="fa-"], .fa, .fas, .far, .fab, .fa-solid, .fa-regular, .fa-brands {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "FontAwesome" !important;
+}
+
+.fa-solid, .fas {
+    font-weight: 900 !important;
+}
+
+.fa-regular, .far {
+    font-weight: 400 !important;
+}
+
+.fa-brands, .fab {
+    font-family: "Font Awesome 6 Brands" !important;
+    font-weight: 400 !important;
+}
+
+.page-container{
+    padding:30px;
+}
+
+.section-title{
+    color:#D89B00;
+    font-weight:700;
+}

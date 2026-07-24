@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Donate Food | Food Rescue Platform</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="/css/restaurant/donate-food.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ===========================
+            SIDEBAR
+    ============================ -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-utensils"></i>
+
+            <h2>Food Rescue</h2>
+
+        </div>
+
+        <ul class="menu">
+
+            <li>
+
+                <a href="/restaurant-dashboard">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+            </li>
+
+            <li class="active">
+
+                <a href="/donate-food">
+
+                    <i class="fa-solid fa-bowl-food"></i>
+
+                    <span>Donate Food</span>
+
+                </a>
+
+            </li>
+			 
+			<li>
+
+			                <a href="/requests">
+
+			                    <i class="fa-solid fa-list-check"></i>
+
+			                    <span>Manage Donations</span>
+
+			                </a>
+
+			            </li>
+						<li>
+
+						                <a href="/donation-history">
+
+						                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+						                    <span>Donation History</span>
+
+						                </a>
+
+						            </li>
+			<li>
+                <a href="/profile">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>Profile</span>
+
+                </a>
+
+            </li>
+
+            
+
+        
+				<li>
+                <a href="#" id="logoutBtn">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    <span>Logout</span>
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- ===========================
+            MAIN CONTENT
+    ============================ -->
+
+    <main class="content">
+
+        <header class="page-header">
+
+            <div>
+
+                <h1>Donate Food</h1>
+
+                <p>
+
+                    Fill in the donation details below.
+
+                </p>
+
+            </div>
+
+        </header>
+
+        <div class="donation-layout">
+
+            <!-- ======================
+                    LEFT PANEL
+            ======================= -->
+
+            <section class="info-card">
+
+                <div class="restaurant-icon">
+
+                    <i class="fa-solid fa-store"></i>
+
+                </div>
+
+                <h2 id="restaurantName">
+
+                    Restaurant Name
+
+                </h2>
+
+                <p>
+
+                    Help reduce food waste and support NGOs
+                    by donating your surplus food.
+
+                </p>
+
+                <div class="tips">
+
+                    <h3>
+
+                        Donation Tips
+
+                    </h3>
+
+                    <ul>
+
+                        <li>
+
+                            Fresh food only
+
+                        </li>
+
+                        <li>
+
+                            Pack food hygienically
+
+                        </li>
+
+                        <li>
+
+                            Mention exact quantity
+
+                        </li>
+
+                        <li>
+
+                            Provide correct pickup address
+
+                        </li>
+
+                        <li>
+
+                            Set accurate expiry time
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+            <!-- ======================
+                    FORM
+            ======================= -->
+
+            <section class="form-card">
+
+                <form id="donationForm">
+
+                    <!-- Food Name -->
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Food Name
+
+                        </label>
+
+                        <input
+                                type="text"
+                                id="foodName"
+                                placeholder="Enter Food Name"
+                                required>
+
+                    </div>
+
+                    <!-- Food Type -->
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Food Type
+
+                        </label>
+
+                        <select id="foodType" required>
+
+                            <option value="">
+
+                                Select Food Type
+
+                            </option>
+
+                            <option value="VEG">
+
+                                Vegetarian
+
+                            </option>
+
+                            <option value="NON_VEG">
+
+                                Non Vegetarian
+
+                            </option>
+
+                            <option value="VEGAN">
+
+                                Vegan
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Quantity -->
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label>
+
+                                Quantity (Kg)
+
+                            </label>
+
+                            <input
+                                    type="number"
+                                    id="quantity"
+                                    min="1"
+                                    required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>
+
+                                Approx Meals
+
+                            </label>
+
+                            <input
+                                    type="number"
+                                    id="approxMeals"
+                                    min="1"
+                                    required>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Prepared Time -->
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label>
+
+                                Prepared Time
+
+                            </label>
+
+                            <input
+                                    type="datetime-local"
+                                    id="preparedTime"
+                                    required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label>
+
+                                Expiry Time
+
+                            </label>
+
+                            <input
+                                    type="datetime-local"
+                                    id="expiryTime"
+                                    required>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Pickup Address -->
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Pickup Address
+
+                        </label>
+
+                        <textarea
+                                id="pickupAddress"
+                                rows="4"
+                                placeholder="Pickup Address"
+                                required></textarea>
+
+                    </div>
+
+                    <!-- Image -->
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Food Image
+
+                        </label>
+
+                        <input
+                                type="file"
+                                id="foodImage"
+                                accept="image/*">
+
+                    </div>
+
+                    <!-- Instructions -->
+
+                    <div class="form-group">
+
+                        <label>
+
+                            Special Instructions
+
+                        </label>
+
+                        <textarea
+                                id="specialInstructions"
+                                rows="4"
+                                placeholder="Any additional instructions"></textarea>
+
+                    </div>
+
+                    <!-- Button -->
+
+                    <button
+                            type="submit"
+                            class="submit-btn">
+
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+
+                        Donate Food
+
+                    </button>
+
+                </form>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="/js/restaurant/donate-food.js"></script>
+<link rel="stylesheet" href="/css/common/toast.css">
+	<script src="/js/common/toast.js"></script>
+
+</body>
+
+</html>

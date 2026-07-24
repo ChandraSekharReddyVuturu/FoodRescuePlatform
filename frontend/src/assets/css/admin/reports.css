@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+.admin-reports * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif !important;
+    transition: all 0.3s ease;
+}
+
+.admin-reports {
+    background: #FFFDF7;
+    color: #2F3A52;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.admin-reports .dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.admin-reports .sidebar {
+    width: 270px;
+    background: linear-gradient(180deg, #FFD54F 0%, #FFB300 50%, #E6A700 100%);
+    color: #FFFFFF;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    box-shadow: 6px 0 24px rgba(255, 193, 7, 0.18);
+    z-index: 1000;
+}
+
+.admin-reports .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 28px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.admin-reports .logo i {
+    font-size: 34px !important;
+    color: #FFFFFF !important;
+}
+
+.admin-reports .logo h2 {
+    font-size: 25px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.admin-reports .sidebar ul {
+    list-style: none;
+    padding: 25px 0;
+}
+
+.admin-reports .sidebar ul li {
+    margin: 10px 15px;
+}
+
+.admin-reports .sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 18px;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.35s ease;
+}
+
+.admin-reports .sidebar ul li a:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateX(6px);
+}
+
+.admin-reports .sidebar ul li.active a {
+    background: #FFFFFF;
+    color: #C88700;
+    font-weight: 700;
+    box-shadow: 0 8px 18px rgba(244, 180, 0, 0.30);
+}
+
+.admin-reports .sidebar ul li i {
+    width: 24px;
+    text-align: center;
+}
+
+.admin-reports .main-content {
+    flex: 1;
+    margin-left: 270px;
+    padding: 35px;
+    background: #FFFDF7;
+}
+
+.admin-reports .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid #F4D06F;
+}
+
+.admin-reports .topbar h1 {
+    color: #C88700;
+    font-size: 34px;
+    font-weight: 800;
+}
+
+.admin-reports .topbar p {
+    color: #6B7280;
+    margin-top: 8px;
+}
+
+.admin-reports .profile-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD54F, #FFC107);
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    box-shadow: 0 8px 18px rgba(255, 193, 7, 0.25);
+}
+
+/* =====================================================
+                STATISTICS CARDS (CSS GRID)
+===================================================== */
+
+.admin-reports .cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-bottom: 25px;
+}
+
+.admin-reports .cards-container.second-row {
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 35px;
+}
+
+.admin-reports .card {
+    background: #FFFFFF;
+    border: 1px solid #F4D06F;
+    border-radius: 22px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 10px 25px rgba(255, 193, 7, 0.18);
+    transition: all 0.3s ease;
+}
+
+.admin-reports .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 35px rgba(255, 193, 7, 0.28);
+    border-color: #FFC107;
+}
+
+.admin-reports .card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD54F, #FFC107);
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.admin-reports .card-icon i {
+    font-size: 26px !important;
+    color: #FFFFFF !important;
+}
+
+.admin-reports .card h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #6B7280;
+    margin-bottom: 4px;
+}
+
+.admin-reports .card h2 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #2F3A52;
+}
+
+/* =====================================================
+                SECTION CARD & ANALYTICS BOX
+===================================================== */
+
+.admin-reports .section-card {
+    background: #FFFFFF;
+    border: 1px solid #F4D06F;
+    border-radius: 22px;
+    padding: 28px;
+    box-shadow: 0 12px 28px rgba(255, 193, 7, 0.15);
+}
+
+.admin-reports .section-header {
+    margin-bottom: 20px;
+}
+
+.admin-reports .section-header h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2F3A52;
+}
+
+.admin-reports .section-header p {
+    font-size: 14px;
+    color: #6B7280;
+    margin-top: 4px;
+}
+
+.admin-reports .report-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.admin-reports .report-box > div {
+    background: #FFFDF7;
+    border: 1px solid #F4D06F;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 8px 20px rgba(255, 193, 7, 0.08);
+}
+
+.admin-reports .report-box h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2F3A52;
+    margin-bottom: 10px;
+}
+
+.admin-reports .report-box p {
+    font-size: 24px;
+    font-weight: 800;
+    color: #C88700;
+}
+
+/* =====================================================
+                RESPONSIVE BREAKPOINTS
+===================================================== */
+
+@media(max-width: 1200px) {
+    .admin-reports .cards-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .admin-reports .cards-container.second-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 992px) {
+    .admin-reports .sidebar {
+        width: 90px;
+    }
+    .admin-reports .logo h2 {
+        display: none;
+    }
+    .admin-reports .sidebar ul li a {
+        justify-content: center;
+    }
+    .admin-reports .main-content {
+        margin-left: 90px;
+    }
+}
+
+@media(max-width: 600px) {
+    .admin-reports .cards-container,
+    .admin-reports .cards-container.second-row,
+    .admin-reports .report-box {
+        grid-template-columns: 1fr;
+    }
+    .admin-reports .sidebar {
+        display: none;
+    }
+    .admin-reports .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+}
+
+/* Font Awesome Font Protection */
+.admin-reports i[class*="fa-"],
+.admin-reports .fa-solid,
+.admin-reports .fas,
+.admin-reports .fa-regular,
+.admin-reports .far,
+.admin-reports .fa-brands,
+.admin-reports .fab,
+.admin-reports .fa {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "FontAwesome" !important;
+    font-weight: 900 !important;
+}

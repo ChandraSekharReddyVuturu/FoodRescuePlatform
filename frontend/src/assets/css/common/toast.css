@@ -1,0 +1,201 @@
+/* ==========================================
+            TOAST CONTAINER
+========================================== */
+
+.toast-container{
+
+    position:fixed;
+
+    top:25px;
+
+    right:25px;
+
+    z-index:9999;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+/* ==========================================
+                TOAST
+========================================== */
+
+.toast{
+
+    min-width:320px;
+
+    max-width:420px;
+
+    background:#ffffff;
+
+    border-radius:15px;
+
+    padding:18px 22px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+    animation:slideIn .35s ease;
+
+    border-left:6px solid #22C55E;
+
+}
+
+/* ==========================================
+            ICON
+========================================== */
+
+.toast i{
+
+    font-size:24px;
+
+}
+
+/* ==========================================
+            MESSAGE
+========================================== */
+
+.toast-message{
+
+    flex:1;
+
+}
+
+.toast-message h4{
+
+    font-size:16px;
+
+    margin-bottom:4px;
+
+}
+
+.toast-message p{
+
+    font-size:14px;
+
+    color:#64748B;
+
+}
+
+/* ==========================================
+            CLOSE BUTTON
+========================================== */
+
+.toast-close{
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    color:#94A3B8;
+
+}
+
+/* ==========================================
+            SUCCESS
+========================================== */
+
+.toast.success{
+
+    border-left-color:#22C55E;
+
+}
+
+.toast.success i{
+
+    color:#22C55E;
+
+}
+
+/* ==========================================
+            ERROR
+========================================== */
+
+.toast.error{
+
+    border-left-color:#EF4444;
+
+}
+
+.toast.error i{
+
+    color:#EF4444;
+
+}
+
+/* ==========================================
+            WARNING
+========================================== */
+
+.toast.warning{
+
+    border-left-color:#F59E0B;
+
+}
+
+.toast.warning i{
+
+    color:#F59E0B;
+
+}
+
+/* ==========================================
+            INFO
+========================================== */
+
+.toast.info{
+
+    border-left-color:#3B82F6;
+
+}
+
+.toast.info i{
+
+    color:#3B82F6;
+
+}
+
+/* ==========================================
+            ANIMATION
+========================================== */
+
+@keyframes slideIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(100px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+
+@keyframes slideOut{
+
+    to{
+
+        opacity:0;
+
+        transform:translateX(120px);
+
+    }
+
+}

@@ -1,0 +1,867 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+.ngo-profile :root {
+
+
+    --primary:#F4B400;
+    --secondary:#FFD54F;
+    --gold:#E6A700;
+    --dark:#374151;
+    --light:#FFF9F0;
+    --white:#FFFFFF;
+    --border:#FFE082;
+
+}
+.ngo-profile * {
+
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+
+}
+.ngo-profile {
+
+
+    scroll-behavior:smooth;
+
+}
+.ngo-profile {
+
+
+    background:var(--light);
+
+    overflow-x:hidden;
+
+    color:var(--dark);
+
+}
+@keyframes fadeIn {
+
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+@keyframes slideLeft {
+
+
+    from{
+
+        transform:translateX(-40px);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateX(0);
+
+        opacity:1;
+
+    }
+
+}
+@keyframes slideTop {
+
+
+    from{
+
+        transform:translateY(40px);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:translateY(0);
+
+        opacity:1;
+
+    }
+
+}
+@keyframes zoomIn {
+
+
+    from{
+
+        transform:scale(.85);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+.ngo-profile {
+
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+.ngo-profile .sidebar {
+
+
+    width:270px;
+
+    position:fixed;
+
+    height:100vh;
+
+    padding:30px 20px;
+
+    color:#FFFFFF;
+
+    background:linear-gradient(
+        180deg,
+        #FFD54F,
+        #F4B400,
+        #E6A700
+    );
+
+    animation:slideLeft .8s ease;
+
+    box-shadow:8px 0 25px rgba(244,180,0,.20);
+
+}
+.ngo-profile .logo {
+
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+}
+.ngo-profile .logo i {
+
+
+    font-size:55px;
+
+    margin-bottom:12px;
+
+    color:#FFFFFF;
+
+}
+.ngo-profile .logo h2 {
+
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#FFFFFF;
+
+}
+.ngo-profile .sidebar ul {
+
+
+    list-style:none;
+
+}
+.ngo-profile .sidebar ul li {
+
+
+    margin:14px 0;
+
+}
+.ngo-profile .sidebar ul li a {
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px 18px;
+
+    color:#FFFFFF;
+
+    text-decoration:none;
+
+    border-radius:14px;
+
+    font-size:17px;
+
+    font-weight:500;
+
+    transition:.35s;
+
+}
+.ngo-profile .sidebar ul li a i {
+
+
+    width:25px;
+
+    text-align:center;
+
+}
+.ngo-profile .sidebar ul li a:hover {
+
+
+    background:rgba(255,255,255,.18);
+
+    transform:translateX(8px);
+
+}
+.ngo-profile .sidebar ul li a.active {
+
+
+    background:#FFFFFF;
+
+    color:#C88700;
+
+    font-weight:700;
+
+}
+.ngo-profile .main-content {
+
+
+    flex:1;
+
+    margin-left:270px;
+
+    padding:35px;
+
+    animation:fadeIn .8s ease;
+
+}
+.ngo-profile .topbar {
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+    padding-bottom:18px;
+
+    border-bottom:2px solid var(--border);
+
+}
+.ngo-profile .topbar h1 {
+
+
+    font-size:34px;
+
+    color:#C88700;
+
+    font-weight:700;
+
+}
+.ngo-profile .topbar h1 i {
+
+
+    color:var(--primary);
+
+    margin-right:10px;
+
+}
+.ngo-profile .topbar p {
+
+
+    color:#6B7280;
+
+    font-size:15px;
+
+}
+.ngo-profile #currentDate {
+
+
+    background:linear-gradient(
+        135deg,
+        #FFD54F,
+        #F4B400
+    );
+
+    color:#FFFFFF;
+
+    padding:12px 22px;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+    box-shadow:0 10px 25px rgba(244,180,0,.25);
+
+}
+.ngo-profile .profile-card {
+
+
+    background:#FFFFFF;
+
+    border:1px solid var(--border);
+
+    border-radius:24px;
+
+    padding:35px;
+
+    box-shadow:0 15px 35px rgba(244,180,0,.12);
+
+    animation:slideTop .8s ease;
+
+    transition:.35s;
+
+}
+.ngo-profile .profile-card:hover {
+
+
+    transform:translateY(-6px);
+
+    box-shadow:0 22px 45px rgba(244,180,0,.22);
+
+}
+.ngo-profile .profile-header {
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    margin-bottom:35px;
+
+    padding-bottom:25px;
+
+    border-bottom:2px solid var(--border);
+
+}
+.ngo-profile .profile-icon {
+
+
+    width:90px;
+
+    height:90px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:linear-gradient(
+        135deg,
+        #FFD54F,
+        #F4B400
+    );
+
+    color:#FFFFFF;
+
+    font-size:38px;
+
+    box-shadow:0 12px 28px rgba(244,180,0,.28);
+
+}
+.ngo-profile .profile-header h2 {
+
+
+    font-size:30px;
+
+    color:#374151;
+
+    margin-bottom:6px;
+
+    font-weight:700;
+
+}
+.ngo-profile .profile-header p {
+
+
+    color:#6B7280;
+
+    font-size:15px;
+
+    font-weight:500;
+
+}
+.ngo-profile .form-grid {
+
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+}
+.ngo-profile .form-group {
+
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+.ngo-profile .full-width {
+
+
+    grid-column:1/-1;
+
+}
+.ngo-profile .form-group label {
+
+
+    font-size:15px;
+
+    font-weight:600;
+
+    color:#374151;
+
+    margin-bottom:8px;
+
+}
+.ngo-profile .form-group input, .ngo-profile .form-group textarea {
+
+
+    width:100%;
+
+    padding:14px 16px;
+
+    border:2px solid var(--border);
+
+    border-radius:14px;
+
+    outline:none;
+
+    font-size:15px;
+
+    color:#374151;
+
+    background:#FFFCF5;
+
+    transition:.35s;
+
+}
+.ngo-profile .form-group textarea {
+
+
+    resize:none;
+
+    min-height:120px;
+
+}
+.ngo-profile .form-group input:focus, .ngo-profile .form-group textarea:focus {
+
+
+    border-color:var(--primary);
+
+    background:#FFFFFF;
+
+    box-shadow:0 0 0 5px rgba(244,180,0,.15);
+
+    transform:translateY(-2px);
+
+}
+.ngo-profile .form-group input::placeholder, .ngo-profile .form-group textarea::placeholder {
+
+
+    color:#9CA3AF;
+
+}
+.ngo-profile .button-group {
+
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    margin-top:35px;
+
+}
+.ngo-profile .save-btn {
+
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    border:none;
+
+    border-radius:14px;
+
+    padding:15px 34px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:#FFFFFF;
+
+    background:linear-gradient(
+        135deg,
+        #FFD54F,
+        #F4B400
+    );
+
+    box-shadow:0 12px 28px rgba(244,180,0,.25);
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+.ngo-profile .save-btn i {
+
+
+    font-size:18px;
+
+}
+.ngo-profile .save-btn:hover {
+
+
+    transform:translateY(-4px);
+
+    box-shadow:0 18px 36px rgba(244,180,0,.35);
+
+}
+.ngo-profile .save-btn:active {
+
+
+    transform:scale(.96);
+
+}
+.ngo-profile .save-btn::before {
+
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+
+    height:0;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.25);
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    transition:.6s;
+
+}
+.ngo-profile .save-btn:hover::before {
+
+
+    width:340px;
+
+    height:340px;
+
+}
+.ngo-profile .form-group input:disabled {
+
+
+    background:#FFF4CC;
+
+    color:#6B7280;
+
+    cursor:not-allowed;
+
+}
+.ngo-profile .loading {
+
+
+    opacity:.65;
+
+    pointer-events:none;
+
+}
+.ngo-profile .success-message {
+
+
+    background:#FFF8E1;
+
+    color:#C88700;
+
+    border-left:5px solid var(--primary);
+
+    padding:14px 18px;
+
+    border-radius:12px;
+
+    margin-bottom:20px;
+
+    font-weight:600;
+
+}
+.ngo-profile .error-message {
+
+
+    background:#FEE2E2;
+
+    color:#DC2626;
+
+    border-left:5px solid #DC2626;
+
+    padding:14px 18px;
+
+    border-radius:12px;
+
+    margin-bottom:20px;
+
+    font-weight:600;
+
+}
+@media(max-width:992px) {
+.ngo-profile .sidebar {
+
+
+        width:220px;
+
+    }
+.ngo-profile .main-content {
+
+
+        margin-left:220px;
+
+        padding:25px;
+
+    }
+.ngo-profile .form-grid {
+
+
+        grid-template-columns:1fr;
+
+    }
+.ngo-profile .topbar h1 {
+
+
+        font-size:28px;
+
+    }
+}
+@media(max-width:768px) {
+.ngo-profile {
+
+
+        flex-direction:column;
+
+    }
+.ngo-profile .sidebar {
+
+
+        position:relative;
+
+        width:100%;
+
+        height:auto;
+
+    }
+.ngo-profile .main-content {
+
+
+        margin-left:0;
+
+        padding:20px;
+
+    }
+.ngo-profile .topbar {
+
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:15px;
+
+    }
+.ngo-profile .profile-card {
+
+
+        padding:24px;
+
+    }
+.ngo-profile .profile-header {
+
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+.ngo-profile .button-group {
+
+
+        justify-content:center;
+
+    }
+.ngo-profile .save-btn {
+
+
+        width:100%;
+
+    }
+}
+@media(max-width:480px) {
+.ngo-profile .topbar h1 {
+
+
+        font-size:24px;
+
+    }
+.ngo-profile .profile-header h2 {
+
+
+        font-size:24px;
+
+    }
+.ngo-profile .profile-icon {
+
+
+        width:75px;
+
+        height:75px;
+
+        font-size:30px;
+
+    }
+.ngo-profile .profile-card {
+
+
+        padding:20px;
+
+    }
+}
+.ngo-profile ::-webkit-scrollbar {
+
+
+    width:8px;
+
+}
+.ngo-profile ::-webkit-scrollbar-track {
+
+
+    background:#FFF8E1;
+
+}
+.ngo-profile ::-webkit-scrollbar-thumb {
+
+
+    background:linear-gradient(
+        #FFD54F,
+        #F4B400
+    );
+
+    border-radius:20px;
+
+}
+.ngo-profile ::-webkit-scrollbar-thumb:hover {
+
+
+    background:#C88700;
+
+}
+.ngo-profile ::selection {
+
+
+    background:#F4B400;
+
+    color:#FFFFFF;
+
+}
+.ngo-profile .sidebar ul li a {
+
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+.ngo-profile .sidebar ul li a::before {
+
+
+    content:"";
+
+    position:absolute;
+
+    left:-100%;
+
+    top:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(255,255,255,.15);
+
+    transition:.45s;
+
+}
+.ngo-profile .sidebar ul li a:hover::before {
+
+
+    left:100%;
+
+}
+.ngo-profile .profile-card, .ngo-profile .form-group input, .ngo-profile .form-group textarea, .ngo-profile .save-btn {
+
+
+    transition:
+        background-color .3s,
+        color .3s,
+        border-color .3s,
+        box-shadow .3s,
+        transform .3s;
+
+}
+.ngo-profile {
+
+
+    animation:fadeIn .6s ease;
+
+}
+
+/* Font Awesome Font Protection */
+.ngo-profile i[class*="fa-"],
+.ngo-profile .fa-solid,
+.ngo-profile .fas,
+.ngo-profile .fa-regular,
+.ngo-profile .far,
+.ngo-profile .fa-brands,
+.ngo-profile .fab,
+.ngo-profile .fa {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "FontAwesome" !important;
+    font-weight: 900 !important;
+}

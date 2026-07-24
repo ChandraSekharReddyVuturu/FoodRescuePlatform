@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>NGO Dashboard | Food Rescue Platform</title>
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Dashboard CSS -->
+
+    <link rel="stylesheet"
+          href="/css/ngo/dashboard.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ==========================
+            SIDEBAR
+    =========================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-hand-holding-heart"></i>
+
+            <h2>NGO Panel</h2>
+
+        </div>
+
+        <ul>
+
+            <li class="active">
+
+                <a href="/ngo-dashboard">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="/available-food">
+
+                    <i class="fa-solid fa-bowl-food"></i>
+
+                    Available Food
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="/received-food">
+
+                    <i class="fa-solid fa-box-open"></i>
+
+                    Received Food
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="/ngo-profile">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Profile
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="/logout">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- ==========================
+            MAIN CONTENT
+    =========================== -->
+
+    <main class="main-content">
+
+        <!-- Topbar -->
+
+        <div class="topbar">
+
+            <div>
+
+                <h1>NGO Dashboard</h1>
+
+                <p>
+                    Welcome,
+                    <strong id="ngoName">NGO</strong>
+                </p>
+
+            </div>
+
+            <span id="currentDate"></span>
+
+        </div>
+		<!-- ==========================
+		        DASHBOARD STATISTICS
+		=========================== -->
+
+		<section class="cards">
+
+		    <div class="card">
+
+		        <div class="card-info">
+
+		            <h3>Available Donations</h3>
+
+		            <h2 id="availableCount">0</h2>
+
+		        </div>
+
+		        <i class="fa-solid fa-bowl-food"></i>
+
+		    </div>
+
+		    <div class="card">
+
+		        <div class="card-info">
+
+		            <h3>Accepted Donations</h3>
+
+		            <h2 id="acceptedCount">0</h2>
+
+		        </div>
+
+		        <i class="fa-solid fa-circle-check"></i>
+
+		    </div>
+
+		    <div class="card">
+
+		        <div class="card-info">
+
+		            <h3>Pending Requests</h3>
+
+		            <h2 id="pendingCount">0</h2>
+
+		        </div>
+
+		        <i class="fa-solid fa-hourglass-half"></i>
+
+		    </div>
+
+		    <div class="card">
+
+		        <div class="card-info">
+
+		            <h3>Completed Pickups</h3>
+
+		            <h2 id="completedCount">0</h2>
+
+		        </div>
+
+		        <i class="fa-solid fa-hand-holding-heart"></i>
+
+		    </div>
+
+		</section>
+
+
+		<!-- ==========================
+		        RECENT DONATIONS
+		=========================== -->
+
+		<div class="table-container">
+
+		    <div class="section-header">
+
+		        <h2>
+
+		            <i class="fa-solid fa-list"></i>
+
+		            Recent Donations
+
+		        </h2>
+
+		    </div>
+
+		    <table>
+
+		        <thead>
+
+		        <tr>
+
+		            <th>Restaurant</th>
+
+		            <th>Food</th>
+
+		            <th>Type</th>
+
+		            <th>Quantity</th>
+
+		            <th>Meals</th>
+
+		            <th>Expiry</th>
+
+		            <th>Status</th>
+
+		            <th>Action</th>
+
+		        </tr>
+
+		        </thead>
+
+		        <tbody id="donationTableBody">
+
+		        <tr>
+
+		            <td colspan="8"
+		                style="text-align:center;padding:30px;">
+
+		                No donations available.
+
+		            </td>
+
+		        </tr>
+
+		        </tbody>
+
+		    </table>
+
+		</div>
+		    </main>
+
+		</div>
+
+		<!-- ==========================================
+		            DASHBOARD JAVASCRIPT
+		========================================== -->
+
+		<script src="/js/ngo/dashboard.js"></script>
+
+		<!-- ==========================================
+		            TOAST
+		========================================== -->
+
+		<link rel="stylesheet"
+		      href="/css/common/toast.css">
+
+		<script src="/js/common/toast.js"></script>
+
+		<!-- ==========================================
+		            CURRENT DATE
+		========================================== -->
+
+		<script>
+
+		    const currentDate = document.getElementById("currentDate");
+
+		    if(currentDate){
+
+		        const today = new Date();
+
+		        currentDate.innerHTML =
+		            today.toLocaleDateString("en-IN",{
+
+		                weekday:"long",
+		                day:"numeric",
+		                month:"long",
+		                year:"numeric"
+
+		            });
+
+		    }
+
+		</script>
+
+		</body>
+
+		</html>

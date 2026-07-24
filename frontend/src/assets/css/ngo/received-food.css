@@ -1,0 +1,941 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+.ngo-received :root {
+
+
+    --primary:#F4B400;
+    --secondary:#FFD54F;
+    --gold:#E6A700;
+    --dark:#374151;
+    --light:#FFF9F0;
+    --white:#FFFFFF;
+    --border:#FFE082;
+
+}
+.ngo-received * {
+
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+
+}
+.ngo-received {
+
+
+    scroll-behavior:smooth;
+
+}
+.ngo-received {
+
+
+    background:var(--light);
+
+    overflow-x:hidden;
+
+    color:var(--dark);
+
+}
+@keyframes fadeIn {
+
+
+    from{
+
+        opacity:0;
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+@keyframes slideLeft {
+
+
+    from{
+
+        opacity:0;
+        transform:translateX(-60px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateX(0);
+
+    }
+
+}
+@keyframes slideTop {
+
+
+    from{
+
+        opacity:0;
+        transform:translateY(-30px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+@keyframes zoomIn {
+
+
+    from{
+
+        opacity:0;
+        transform:scale(.85);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:scale(1);
+
+    }
+
+}
+.ngo-received {
+
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+.ngo-received .sidebar {
+
+
+    width:260px;
+
+    position:fixed;
+
+    height:100vh;
+
+    padding:30px 0;
+
+    color:#FFFFFF;
+
+    background:linear-gradient(
+        180deg,
+        #FFD54F,
+        #F4B400,
+        #E6A700
+    );
+
+    animation:slideLeft .8s ease;
+
+    box-shadow:8px 0 25px rgba(244,180,0,.20);
+
+}
+.ngo-received .logo {
+
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+.ngo-received .logo i {
+
+
+    font-size:48px;
+
+    margin-bottom:12px;
+
+    color:#FFFFFF;
+
+}
+.ngo-received .logo h2 {
+
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#FFFFFF;
+
+}
+.ngo-received .sidebar ul {
+
+
+    list-style:none;
+
+}
+.ngo-received .sidebar ul li {
+
+
+    margin:12px 15px;
+
+}
+.ngo-received .sidebar ul li a {
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:15px 18px;
+
+    color:#FFFFFF;
+
+    text-decoration:none;
+
+    border-radius:14px;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    transition:.35s;
+
+}
+.ngo-received .sidebar ul li a i {
+
+
+    width:22px;
+
+    text-align:center;
+
+}
+.ngo-received .sidebar ul li a:hover {
+
+
+    background:rgba(255,255,255,.18);
+
+    transform:translateX(8px);
+
+}
+.ngo-received .sidebar ul li.active a, .ngo-received .sidebar ul li a.active {
+
+
+    background:#FFFFFF;
+
+    color:#C88700;
+
+    font-weight:700;
+
+}
+.ngo-received .main-content {
+
+
+    width:100%;
+
+    margin-left:260px;
+
+    padding:35px;
+
+    animation:fadeIn .8s ease;
+
+}
+.ngo-received .topbar {
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+
+    padding-bottom:18px;
+
+    border-bottom:2px solid var(--border);
+
+    animation:slideTop .8s ease;
+
+}
+.ngo-received .topbar h1 {
+
+
+    color:#374151;
+
+    font-size:32px;
+
+    font-weight:700;
+
+}
+.ngo-received #ngoName {
+
+
+    background:linear-gradient(
+        135deg,
+        #FFD54F,
+        #F4B400
+    );
+
+    color:#FFFFFF;
+
+    padding:10px 22px;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+    box-shadow:0 10px 24px rgba(244,180,0,.25);
+
+}
+.ngo-received .cards {
+
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:22px;
+
+    margin-bottom:30px;
+
+}
+.ngo-received .card {
+
+
+    background:#FFFFFF;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:24px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    animation:zoomIn .8s ease;
+
+    transition:.35s;
+
+    box-shadow:0 12px 28px rgba(244,180,0,.12);
+
+}
+.ngo-received .card:hover {
+
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px rgba(244,180,0,.22);
+
+}
+.ngo-received .card-info h3 {
+
+
+    color:#6B7280;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    margin-bottom:8px;
+
+}
+.ngo-received .card-info h2 {
+
+
+    color:#374151;
+
+    font-size:30px;
+
+    font-weight:700;
+
+}
+.ngo-received .card i {
+
+
+    font-size:42px;
+
+    color:#C88700;
+
+}
+.ngo-received .table-container {
+
+
+    background:#FFFFFF;
+
+    border:1px solid var(--border);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 15px 35px rgba(244,180,0,.12);
+
+    animation:fadeIn .8s ease;
+
+    overflow-x:auto;
+
+    transition:.35s;
+
+}
+.ngo-received .table-container:hover {
+
+
+    box-shadow:0 22px 45px rgba(244,180,0,.20);
+
+}
+.ngo-received table {
+
+
+    width:100%;
+
+    min-width:900px;
+
+    border-collapse:collapse;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+}
+.ngo-received thead {
+
+
+    background:linear-gradient(
+        135deg,
+        #FFD54F,
+        #F4B400
+    );
+
+    color:#FFFFFF;
+
+}
+.ngo-received thead th {
+
+
+    padding:18px;
+
+    text-align:left;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    letter-spacing:.4px;
+
+}
+.ngo-received tbody tr {
+
+
+    animation:fadeIn .7s ease;
+
+    transition:.35s;
+
+}
+.ngo-received tbody tr:nth-child(even) {
+
+
+    background:#FFFDF7;
+
+}
+.ngo-received tbody tr:hover {
+
+
+    background:#FFF8E1;
+
+    transform:scale(1.01);
+
+}
+.ngo-received tbody td {
+
+
+    padding:16px;
+
+    color:#374151;
+
+    border-bottom:1px solid var(--border);
+
+    font-size:15px;
+
+}
+.ngo-received .status {
+
+
+    display:inline-block;
+
+    padding:7px 15px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+.ngo-received .available {
+
+
+    background:#FFF4CC;
+
+    color:#C88700;
+
+}
+.ngo-received .accepted {
+
+
+    background:#FFE082;
+
+    color:#9A6700;
+
+}
+.ngo-received .assigned {
+
+
+    background:#FFF8E1;
+
+    color:#B7791F;
+
+}
+.ngo-received .picked_up {
+
+
+    background:#FFF3CD;
+
+    color:#A66B00;
+
+}
+.ngo-received .delivered {
+
+
+    background:#FFE9A8;
+
+    color:#8A5A00;
+
+}
+.ngo-received .completed {
+
+
+    background:#FFF9E6;
+
+    color:#7A5200;
+
+}
+.ngo-received .expired {
+
+
+    background:#FEE2E2;
+
+    color:#DC2626;
+
+}
+.ngo-received .accept-btn, .ngo-received .view-btn, .ngo-received .assign-btn {
+
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    color:#FFFFFF;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    padding:10px 18px;
+
+    border-radius:10px;
+
+    color:#FFFFFF;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    box-shadow:0 10px 22px rgba(244,180,0,.22);
+
+}
+.ngo-received .accept-btn, .ngo-received .assign-btn {
+    background: linear-gradient(135deg, #FFD54F, #F4B400);
+}
+.ngo-received .details-btn,
+.ngo-received .view-btn,
+.ngo-received .action-btn.details-btn {
+    height: 46px !important;
+    min-width: 95px !important;
+    padding: 0 22px !important;
+    background: #E6A100 !important;
+    color: #FFFFFF !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    border-radius: 14px !important;
+    border: none !important;
+    outline: none !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 8px 18px rgba(230, 161, 0, 0.25) !important;
+    transition: all 0.25s ease !important;
+}
+
+.ngo-received .details-btn:hover,
+.ngo-received .view-btn:hover,
+.ngo-received .action-btn.details-btn:hover {
+    background: #D18B00 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 12px 24px rgba(230, 161, 0, 0.35) !important;
+}
+.ngo-received .accept-btn:hover, .ngo-received .assign-btn:hover, .ngo-received .view-btn:hover {
+
+    box-shadow:0 16px 30px rgba(244,180,0,.30);
+
+}
+.ngo-received .accept-btn:active, .ngo-received .assign-btn:active, .ngo-received .view-btn:active {
+
+
+    transform:scale(.96);
+
+}
+.ngo-received .empty-message {
+
+
+    text-align:center;
+
+    padding:50px 20px;
+
+    color:#6B7280;
+
+    font-size:18px;
+
+    font-weight:500;
+
+}
+.ngo-received .empty-message i {
+
+
+    display:block;
+
+    margin-bottom:20px;
+
+    font-size:70px;
+
+    color:#F4B400;
+
+}
+.ngo-received .loader {
+
+
+    width:55px;
+
+    height:55px;
+
+    margin:60px auto;
+
+    border:6px solid #FFF4CC;
+
+    border-top:6px solid #F4B400;
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+}
+@keyframes spin {
+
+
+    100%{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+.ngo-received .fade-in {
+
+
+    animation:fadeIn .8s ease;
+
+}
+.ngo-received .slide-top {
+
+
+    animation:slideTop .8s ease;
+
+}
+.ngo-received .slide-left {
+
+
+    animation:slideLeft .8s ease;
+
+}
+.ngo-received .zoom-in {
+
+
+    animation:zoomIn .8s ease;
+
+}
+@media(max-width:1200px) {
+.ngo-received table {
+
+
+        min-width:900px;
+
+    }
+}
+@media(max-width:992px) {
+.ngo-received .sidebar {
+
+
+        width:220px;
+
+    }
+.ngo-received .main-content {
+
+
+        margin-left:220px;
+
+        padding:25px;
+
+    }
+.ngo-received .topbar h1 {
+
+
+        font-size:26px;
+
+    }
+}
+@media(max-width:768px) {
+.ngo-received {
+
+
+        flex-direction:column;
+
+    }
+.ngo-received .sidebar {
+
+
+        position:relative;
+
+        width:100%;
+
+        height:auto;
+
+    }
+.ngo-received .logo {
+
+
+        margin-bottom:20px;
+
+    }
+.ngo-received .sidebar ul {
+
+
+        display:flex;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+    }
+.ngo-received .sidebar ul li {
+
+
+        margin:6px;
+
+    }
+.ngo-received .sidebar ul li a {
+
+
+        padding:10px 14px;
+
+        font-size:14px;
+
+    }
+.ngo-received .main-content {
+
+
+        margin-left:0;
+
+        padding:20px;
+
+    }
+.ngo-received .topbar {
+
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:15px;
+
+    }
+.ngo-received .cards {
+
+
+        grid-template-columns:1fr;
+
+    }
+.ngo-received .table-container {
+
+
+        padding:15px;
+
+    }
+.ngo-received table {
+
+
+        min-width:850px;
+
+    }
+}
+@media(max-width:480px) {
+.ngo-received .topbar h1 {
+
+
+        font-size:22px;
+
+    }
+.ngo-received thead th, .ngo-received tbody td {
+
+
+        padding:12px;
+
+        font-size:13px;
+
+    }
+.ngo-received .accept-btn, .ngo-received .assign-btn, .ngo-received .view-btn {
+
+
+        padding:8px 14px;
+
+        font-size:13px;
+
+    }
+}
+.ngo-received ::-webkit-scrollbar {
+
+
+    width:8px;
+
+    height:8px;
+
+}
+.ngo-received ::-webkit-scrollbar-track {
+
+
+    background:#FFF8E1;
+
+}
+.ngo-received ::-webkit-scrollbar-thumb {
+
+
+    background:linear-gradient(
+        #FFD54F,
+        #F4B400
+    );
+
+    border-radius:20px;
+
+}
+.ngo-received ::-webkit-scrollbar-thumb:hover {
+
+
+    background:#C88700;
+
+}
+.ngo-received ::selection {
+
+
+    background:#F4B400;
+
+    color:#FFFFFF;
+
+}
+.ngo-received .sidebar ul li a {
+
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+.ngo-received .sidebar ul li a::before {
+
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(255,255,255,.18);
+
+    transition:.45s;
+
+}
+.ngo-received .sidebar ul li a:hover::before {
+
+
+    left:100%;
+
+}
+.ngo-received .table-container, .ngo-received .card, .ngo-received .accept-btn, .ngo-received .assign-btn, .ngo-received .view-btn {
+
+
+    transition:
+        background-color .3s,
+        color .3s,
+        border-color .3s,
+        transform .3s,
+        box-shadow .3s;
+
+}
+.ngo-received {
+
+
+    animation:fadeIn .6s ease;
+
+}
+
+/* Font Awesome Font Protection */
+.ngo-received i[class*="fa-"],
+.ngo-received .fa-solid,
+.ngo-received .fas,
+.ngo-received .fa-regular,
+.ngo-received .far,
+.ngo-received .fa-brands,
+.ngo-received .fab,
+.ngo-received .fa {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "FontAwesome" !important;
+    font-weight: 900 !important;
+}

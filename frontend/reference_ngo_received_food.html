@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Received Food | NGO</title>
+
+    <link rel="stylesheet" href="/css/ngo/received-food.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+
+<!-- ===========================
+        SIDEBAR
+=========================== -->
+
+
+<aside class="sidebar">
+
+
+    <div class="logo">
+
+        <i class="fa-solid fa-hand-holding-heart"></i>
+
+        <h2>NGO Panel</h2>
+
+    </div>
+
+
+
+
+    <ul>
+
+
+        <li>
+
+            <a href="/ngo-dashboard">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                Dashboard
+
+            </a>
+
+        </li>
+
+
+
+
+        <li>
+
+            <a href="/available-food">
+
+                <i class="fa-solid fa-bowl-food"></i>
+
+                Available Food
+
+            </a>
+
+        </li>
+
+
+
+
+        <li>
+
+            <a href="/received-food" class="active">
+
+                <i class="fa-solid fa-box-open"></i>
+
+                Received Food
+
+            </a>
+
+        </li>
+
+
+
+
+        <!-- Assign Volunteer -->
+
+       
+
+
+
+
+        <li>
+
+            <a href="/ngo-profile">
+
+                <i class="fa-solid fa-user"></i>
+
+                Profile
+
+            </a>
+
+        </li>
+
+
+
+
+		<li>
+
+		    <a href="#" onclick="logout()">
+
+		        <i class="fa-solid fa-right-from-bracket"></i>
+
+		        Logout
+
+		    </a>
+
+		</li>
+
+
+
+    </ul>
+
+
+
+</aside>
+
+
+
+
+
+
+<!-- ===========================
+        MAIN CONTENT
+=========================== -->
+
+
+<main class="main-content">
+
+
+
+
+
+<div class="topbar">
+
+
+    <div>
+
+
+        <h1>
+
+            <i class="fa-solid fa-box-open"></i>
+
+            Received Food
+
+        </h1>
+
+
+
+        <p>
+
+            View accepted food donations and assign volunteers.
+
+        </p>
+
+
+    </div>
+
+
+
+
+    <div id="currentDate"></div>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<!-- ===========================
+        SUMMARY CARDS
+=========================== -->
+
+
+<div class="cards">
+
+
+
+    <div class="card">
+
+
+        <i class="fa-solid fa-box"></i>
+
+
+        <div class="card-info">
+
+
+            <h2 id="acceptedCount">
+                0
+            </h2>
+
+
+            <p>
+                Accepted
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <div class="card">
+
+
+        <i class="fa-solid fa-user-check"></i>
+
+
+        <div class="card-info">
+
+
+            <h2 id="assignedCount">
+                0
+            </h2>
+
+
+            <p>
+                Assigned
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+    <div class="card">
+
+
+        <i class="fa-solid fa-truck"></i>
+
+
+        <div class="card-info">
+
+
+            <h2 id="pickedCount">
+                0
+            </h2>
+
+
+            <p>
+                Picked Up
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+    <div class="card">
+
+
+        <i class="fa-solid fa-circle-check"></i>
+
+
+        <div class="card-info">
+
+
+            <h2 id="completedCount">
+                0
+            </h2>
+
+
+            <p>
+                Completed
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- ===========================
+        DONATION TABLE
+=========================== -->
+
+
+<div class="table-container">
+
+
+
+<div class="section-header">
+
+
+<h2>
+
+<i class="fa-solid fa-list-check"></i>
+
+Donation History
+
+</h2>
+
+
+</div>
+
+
+
+
+
+
+<table>
+
+
+<thead>
+
+
+<tr>
+
+
+<th>
+Restaurant
+</th>
+
+
+<th>
+Food
+</th>
+
+
+<th>
+Type
+</th>
+
+
+<th>
+Quantity
+</th>
+
+
+<th>
+Meals
+</th>
+
+
+<th>
+Accepted At
+</th>
+
+
+<th>
+Status
+</th>
+
+
+<th>
+Action
+</th>
+
+
+</tr>
+
+
+</thead>
+
+
+
+
+<tbody id="receivedFoodTableBody">
+
+
+</tbody>
+
+
+
+
+</table>
+
+
+
+</div>
+
+
+
+
+
+</main>
+
+
+
+</div>
+
+
+
+
+
+
+<script src="/js/common/toast.js"></script>
+
+<script src="/js/ngo/received-food.js"></script>
+
+
+
+
+<script>
+
+
+document.getElementById("currentDate").innerHTML =
+
+new Date().toLocaleDateString("en-IN",{
+
+    weekday:"long",
+
+    year:"numeric",
+
+    month:"long",
+
+    day:"numeric"
+
+});
+
+
+</script>
+
+
+
+</body>
+
+
+</html>

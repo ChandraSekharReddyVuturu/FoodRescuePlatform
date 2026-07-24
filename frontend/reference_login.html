@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Food Rescue Platform</title>
+
+    <link rel="stylesheet" href="/css/public/login.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <!-- Left Side -->
+        <div class="login-left">
+
+            <div class="brand">
+
+                <i class="fa-solid fa-bowl-food logo"></i>
+
+                <h1>Food Rescue Platform</h1>
+
+                <p>
+                    Connecting Restaurants, NGOs, Volunteers and
+                    Communities to reduce food waste.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Right Side -->
+        <div class="login-right">
+
+            <div class="login-box">
+
+                <h2>Welcome Back 👋</h2>
+
+                <p class="subtitle">
+                    Select your account type and sign in.
+                </p>
+
+                <!-- Role Selection -->
+
+                <h3 class="role-title">
+                    Choose Your Role
+                </h3>
+
+                <div class="role-grid">
+
+                    <div class="role-card active"
+                        data-role="restaurant">
+
+                        <i class="fa-solid fa-utensils"></i>
+
+                        <span>Restaurant</span>
+
+                    </div>
+
+                    <div class="role-card"
+                        data-role="ngo">
+
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+
+                        <span>NGO</span>
+
+                    </div>
+
+                    <div class="role-card"
+                        data-role="volunteer">
+
+                        <i class="fa-solid fa-truck-fast"></i>
+
+                        <span>Volunteer</span>
+
+                    </div>
+
+                    <div class="role-card"
+                        data-role="admin">
+
+                        <i class="fa-solid fa-user-shield"></i>
+
+                        <span>Admin</span>
+
+                    </div>
+
+                </div>
+
+                <!-- Login Form -->
+
+                <form id="loginForm">
+
+                    <div class="input-group">
+
+                        <label>Email Address</label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your email"
+                                required>
+
+                        </div>
+
+                    </div>
+
+                    <div class="input-group">
+
+                        <label>Password</label>
+
+                        <div class="input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="password"
+                                placeholder="Enter your password"
+                                required>
+
+                            <i
+                                class="fa-solid fa-eye toggle-password"
+                                id="togglePassword">
+                            </i>
+
+                        </div>
+
+                    </div>
+
+                    <div class="remember">
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            Remember Me
+
+                        </label>
+
+                        <a href="#">
+                            Forgot Password?
+                        </a>
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="login-btn">
+
+                        <i class="fa-solid fa-right-to-bracket"></i>
+
+                        Login
+
+                    </button>
+
+                </form>
+
+                <div class="divider">
+
+                    <span>OR</span>
+
+                </div>
+
+                <p class="register-text">
+
+                    Don't have an account?
+
+                    <a href="/register">
+                        Register Here
+                    </a>
+
+                </p>
+
+                <a
+                    href="/"
+                    class="back-home">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Back to Home
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="/js/public/login.js"></script>
+
+</body>
+
+</html>

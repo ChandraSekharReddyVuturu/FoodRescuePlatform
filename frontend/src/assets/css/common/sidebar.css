@@ -1,0 +1,14 @@
+.sidebar{
+    background:linear-gradient(180deg,#F4B400,#D89B00);
+    color:#fff;
+}
+
+.sidebar a{
+    color:#fff;
+    border-radius:10px;
+}
+
+.sidebar a:hover,
+.sidebar .active{
+    background:rgba(255,255,255,.22);
+}

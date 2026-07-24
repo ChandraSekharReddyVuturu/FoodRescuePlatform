@@ -1,0 +1,944 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+.volunteer-pickups :root {
+
+
+    --primary:#F4B400;
+    --secondary:#FFD54F;
+    --gold:#E6A700;
+    --dark:#374151;
+    --light:#FFF9F0;
+    --white:#FFFFFF;
+    --border:#FFE082;
+
+}
+.volunteer-pickups * {
+
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+
+    transition:.3s;
+
+}
+.volunteer-pickups {
+
+
+    background:var(--light);
+
+    color:var(--dark);
+
+}
+.volunteer-pickups .dashboard-container {
+
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+.volunteer-pickups .sidebar {
+
+
+    width:270px;
+
+    position:fixed;
+
+    top:0;
+
+    bottom:0;
+
+    left:0;
+
+    padding:25px 15px;
+
+    color:#FFFFFF;
+
+    background:linear-gradient(
+        180deg,
+        #FFD54F,
+        #F4B400,
+        #E6A700
+    );
+
+    box-shadow:8px 0 25px rgba(244,180,0,.20);
+
+    animation:slideLeft .7s ease;
+
+}
+.volunteer-pickups .logo {
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:20px;
+
+    margin-bottom:30px;
+
+    border-bottom:1px solid rgba(255,255,255,.20);
+
+}
+.volunteer-pickups .logo i {
+
+
+    font-size:35px;
+
+    color:#FFFFFF;
+
+}
+.volunteer-pickups .logo h2 {
+
+
+    font-size:24px;
+
+    font-weight:700;
+
+    color:#FFFFFF;
+
+}
+.volunteer-pickups .sidebar ul {
+
+
+    list-style:none;
+
+}
+.volunteer-pickups .sidebar ul li {
+
+
+    margin:12px 10px;
+
+}
+.volunteer-pickups .sidebar ul li a {
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px 18px;
+
+    color:#FFFFFF;
+
+    text-decoration:none;
+
+    border-radius:14px;
+
+    font-weight:600;
+
+}
+.volunteer-pickups .sidebar ul li a:hover {
+
+
+    background:rgba(255,255,255,.18);
+
+    transform:translateX(8px);
+
+}
+.volunteer-pickups .sidebar ul li.active a {
+
+
+    background:#FFFFFF;
+
+    color:#C88700;
+
+    box-shadow:0 10px 25px rgba(244,180,0,.20);
+
+}
+.volunteer-pickups .main-content {
+
+
+    margin-left:270px;
+
+    width:calc(100% - 270px);
+
+    padding:35px;
+
+    animation:fadeIn .7s ease;
+
+}
+.volunteer-pickups .topbar {
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+    padding-bottom:18px;
+
+    border-bottom:2px solid var(--border);
+
+}
+.volunteer-pickups .topbar h1 {
+
+
+    font-size:34px;
+
+    font-weight:800;
+
+    color:#C88700;
+
+}
+.volunteer-pickups .topbar p {
+
+
+    color:#6B7280;
+
+    margin-top:8px;
+
+}
+.volunteer-pickups .profile-icon {
+
+
+    width:58px;
+
+    height:58px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #FFD54F,
+        #F4B400
+    );
+
+    color:#FFFFFF;
+
+    font-size:22px;
+
+    box-shadow:0 12px 28px rgba(244,180,0,.25);
+
+}
+.volunteer-pickups .cards-container {
+
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+    margin-bottom:35px;
+
+}
+.volunteer-pickups .card {
+
+
+    background:#FFFFFF;
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    padding:28px;
+
+    box-shadow:0 15px 35px rgba(244,180,0,.12);
+
+    animation:fadeUp .7s ease;
+
+}
+.volunteer-pickups .card:hover {
+
+
+    transform:translateY(-10px);
+
+    box-shadow:0 25px 50px rgba(244,180,0,.22);
+
+}
+.volunteer-pickups .card-icon {
+
+
+    width:65px;
+
+    height:65px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#FFF4CC;
+
+    color:#C88700;
+
+    font-size:28px;
+
+    margin-bottom:20px;
+
+}
+.volunteer-pickups .card h3 {
+
+
+    color:#6B7280;
+
+    font-size:16px;
+
+    font-weight:700;
+
+}
+.volunteer-pickups .card h2 {
+
+
+    margin-top:10px;
+
+    font-size:34px;
+
+    color:#374151;
+
+    font-weight:800;
+
+}
+.volunteer-pickups .pickups-container {
+
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+.volunteer-pickups .pickup-card {
+
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:#FFFFFF;
+
+    border:1px solid var(--border);
+
+    border-radius:22px;
+
+    padding:25px;
+
+    box-shadow:0 15px 35px rgba(244,180,0,.12);
+
+    animation:fadeUp .7s ease;
+
+}
+.volunteer-pickups .pickup-card:hover {
+
+
+    transform:translateY(-10px);
+
+    box-shadow:0 25px 50px rgba(244,180,0,.22);
+
+}
+.volunteer-pickups .pickup-card::before {
+
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:5px;
+
+    background:linear-gradient(
+        90deg,
+        #FFD54F,
+        #F4B400
+    );
+
+}
+.volunteer-pickups .pickup-header {
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+.volunteer-pickups .pickup-header h3 {
+
+
+    color:#C88700;
+
+    font-size:20px;
+
+    font-weight:700;
+
+}
+.volunteer-pickups .pickup-details p {
+
+
+    margin:12px 0;
+
+    color:#6B7280;
+
+    font-weight:500;
+
+}
+.volunteer-pickups .pickup-details i {
+
+
+    color:#C88700;
+
+    margin-right:10px;
+
+}
+.volunteer-pickups .food-image {
+
+
+    width:100%;
+
+    height:180px;
+
+    object-fit:cover;
+
+    margin-bottom:20px;
+
+    border-radius:16px;
+
+    border:2px solid var(--border);
+
+}
+.volunteer-pickups .status {
+
+
+    display:inline-block;
+
+    padding:8px 15px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:700;
+
+}
+.volunteer-pickups .status.ASSIGNED {
+
+
+    background:#FFF4CC;
+
+    color:#C88700;
+
+}
+.volunteer-pickups .status.PICKED_UP {
+
+
+    background:#FFF8E1;
+
+    color:#B8860B;
+
+}
+.volunteer-pickups .status.DELIVERED {
+
+
+    background:#FFF9E6;
+
+    color:#996515;
+
+}
+.volunteer-pickups .status.COMPLETED {
+
+
+    background:#FFE082;
+
+    color:#8A5A00;
+
+}
+.volunteer-pickups .pickup-btn, .volunteer-pickups .deliver-btn {
+
+
+    width:100%;
+
+    margin-top:20px;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:14px;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    color:#FFFFFF;
+
+    cursor:pointer;
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:.3s;
+
+}
+.volunteer-pickups .pickup-btn {
+
+
+    background:linear-gradient(
+        135deg,
+        #FFD54F,
+        #F4B400
+    );
+
+}
+.volunteer-pickups .deliver-btn {
+
+
+    background:linear-gradient(
+        135deg,
+        #F4B400,
+        #C88700
+    );
+
+}
+.volunteer-pickups .pickup-btn:hover, .volunteer-pickups .deliver-btn:hover {
+
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 30px rgba(244,180,0,.25);
+
+}
+.volunteer-pickups .pickup-btn::before, .volunteer-pickups .deliver-btn::before {
+
+
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    width:0;
+
+    height:0;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.30);
+
+    transform:translate(-50%,-50%);
+
+    transition:.45s;
+
+}
+.volunteer-pickups .pickup-btn:hover::before, .volunteer-pickups .deliver-btn:hover::before {
+
+
+    width:320px;
+
+    height:320px;
+
+}
+.volunteer-pickups .section-card, .volunteer-pickups .table-card {
+
+
+    margin-top:35px;
+
+    background:#FFFFFF;
+
+    border:1px solid #FFE082;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    box-shadow:0 15px 35px rgba(244,180,0,.12);
+
+    animation:fadeUp .8s ease;
+
+}
+.volunteer-pickups .section-card:hover, .volunteer-pickups .table-card:hover {
+
+
+    box-shadow:0 25px 50px rgba(244,180,0,.22);
+
+}
+.volunteer-pickups .section-header {
+
+
+    margin-bottom:25px;
+
+}
+.volunteer-pickups .section-header h2 {
+
+
+    color:#C88700;
+
+    font-size:24px;
+
+    font-weight:800;
+
+}
+.volunteer-pickups .section-header i {
+
+
+    color:#F4B400;
+
+    margin-right:10px;
+
+}
+.volunteer-pickups .section-header p {
+
+
+    margin-top:8px;
+
+    color:#6B7280;
+
+}
+.volunteer-pickups .table-container {
+
+
+    overflow-x:auto;
+
+}
+.volunteer-pickups table {
+
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+.volunteer-pickups thead {
+
+
+    background:linear-gradient(
+        135deg,
+        #FFD54F,
+        #F4B400
+    );
+
+}
+.volunteer-pickups thead th {
+
+
+    padding:18px;
+
+    text-align:left;
+
+    color:#FFFFFF;
+
+    font-weight:700;
+
+}
+.volunteer-pickups tbody td {
+
+
+    padding:18px;
+
+    color:#6B7280;
+
+    border-bottom:1px solid #FFE082;
+
+}
+.volunteer-pickups tbody tr:nth-child(even) {
+
+
+    background:#FFFDF7;
+
+}
+.volunteer-pickups tbody tr:hover {
+
+
+    background:#FFF8E1;
+
+}
+.volunteer-pickups .empty-message {
+
+
+    text-align:center;
+
+    padding:45px;
+
+    color:#9CA3AF;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+@keyframes fadeUp {
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+@keyframes slideLeft {
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(-50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+@keyframes fadeIn {
+
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+@media(max-width:1200px) {
+.volunteer-pickups .pickups-container, .volunteer-pickups .cards-container {
+
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+}
+@media(max-width:850px) {
+.volunteer-pickups .sidebar {
+
+
+        width:90px;
+
+    }
+.volunteer-pickups .logo h2 {
+
+
+        display:none;
+
+    }
+.volunteer-pickups .sidebar ul li a {
+
+
+        justify-content:center;
+
+    }
+.volunteer-pickups .sidebar ul li a span {
+
+
+        display:none;
+
+    }
+.volunteer-pickups .main-content {
+
+
+        margin-left:90px;
+
+        width:calc(100% - 90px);
+
+    }
+}
+@media(max-width:650px) {
+.volunteer-pickups .sidebar {
+
+
+        display:none;
+
+    }
+.volunteer-pickups .main-content {
+
+
+        margin-left:0;
+
+        width:100%;
+
+        padding:20px;
+
+    }
+.volunteer-pickups .pickups-container, .volunteer-pickups .cards-container {
+
+
+        grid-template-columns:1fr;
+
+    }
+.volunteer-pickups .topbar {
+
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+
+    }
+}
+@media(max-width:480px) {
+.volunteer-pickups .topbar h1 {
+
+
+        font-size:24px;
+
+    }
+.volunteer-pickups .section-card, .volunteer-pickups .table-card {
+
+
+        padding:20px;
+
+    }
+.volunteer-pickups thead th, .volunteer-pickups tbody td {
+
+
+        padding:12px;
+
+        font-size:13px;
+
+    }
+}
+.volunteer-pickups ::-webkit-scrollbar {
+
+
+    width:8px;
+
+}
+.volunteer-pickups ::-webkit-scrollbar-track {
+
+
+    background:#FFF8E1;
+
+}
+.volunteer-pickups ::-webkit-scrollbar-thumb {
+
+
+    background:linear-gradient(
+        #FFD54F,
+        #F4B400
+    );
+
+    border-radius:20px;
+
+}
+.volunteer-pickups ::-webkit-scrollbar-thumb:hover {
+
+
+    background:#C88700;
+
+}
+.volunteer-pickups ::selection {
+
+
+    background:#F4B400;
+
+    color:#FFFFFF;
+
+}
+.volunteer-pickups .sidebar ul li a {
+
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+.volunteer-pickups .sidebar ul li a::before {
+
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(255,255,255,.18);
+
+    transition:.45s;
+
+}
+.volunteer-pickups .sidebar ul li a:hover::before {
+
+
+    left:100%;
+
+}
+.volunteer-pickups .card, .volunteer-pickups .pickup-card, .volunteer-pickups .section-card, .volunteer-pickups .table-card {
+
+
+    transition:
+        transform .3s,
+        box-shadow .3s,
+        border-color .3s,
+        background-color .3s;
+
+}
+.volunteer-pickups {
+
+
+    animation:fadeIn .6s ease;
+
+}
+
+/* Font Awesome Font Protection */
+.volunteer-pickups i[class*="fa-"],
+.volunteer-pickups .fa-solid,
+.volunteer-pickups .fas,
+.volunteer-pickups .fa-regular,
+.volunteer-pickups .far,
+.volunteer-pickups .fa-brands,
+.volunteer-pickups .fab,
+.volunteer-pickups .fa {
+    font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands", "FontAwesome" !important;
+    font-weight: 900 !important;
+}

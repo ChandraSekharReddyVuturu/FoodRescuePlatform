@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>NGO Profile</title>
+
+    <link rel="stylesheet" href="/css/ngo/profile.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-hand-holding-heart"></i>
+
+            <h2>NGO Panel</h2>
+
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="/ngo-dashboard">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="/available-food">
+                    <i class="fa-solid fa-bowl-food"></i>
+                    Available Food
+                </a>
+            </li>
+
+            <li>
+                <a href="/received-food">
+                    <i class="fa-solid fa-box-open"></i>
+                    Received Food
+                </a>
+            </li>
+
+            <li>
+                <a href="/ngo-profile" class="active">
+                    <i class="fa-solid fa-user"></i>
+                    Profile
+                </a>
+            </li>
+
+            <li>
+                <a href="/logout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <div class="topbar">
+
+            <div>
+
+                <h1>
+
+                    <i class="fa-solid fa-user"></i>
+
+                    NGO Profile
+
+                </h1>
+
+                <p>
+
+                    View and update your organization details.
+
+                </p>
+
+            </div>
+
+            <div id="currentDate"></div>
+
+        </div>
+
+        <!-- Profile Card -->
+
+        <div class="profile-card">
+
+            <div class="profile-header">
+
+                <div class="profile-icon">
+
+                    <i class="fa-solid fa-building-user"></i>
+
+                </div>
+
+                <div>
+
+                    <h2 id="ngoName">
+
+                        NGO Name
+
+                    </h2>
+
+                    <p id="status">
+
+                        Active NGO
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <form id="profileForm">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label>NGO Name</label>
+
+                        <input
+                                type="text"
+                                id="ngoNameInput">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Owner Name</label>
+
+                        <input
+                                type="text"
+                                id="ownerName">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Email</label>
+
+                        <input
+                                type="email"
+                                id="email">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Phone</label>
+
+                        <input
+                                type="text"
+                                id="phone">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Registration Number</label>
+
+                        <input
+                                type="text"
+                                id="registrationNumber">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>City</label>
+
+                        <input
+                                type="text"
+                                id="city">
+
+                    </div>
+
+                    <div class="form-group full-width">
+
+                        <label>Address</label>
+
+                        <textarea
+                                id="address"
+                                rows="3"></textarea>
+
+                    </div>
+
+                </div>
+
+                <div class="button-group">
+
+                    <button
+                            type="submit"
+                            class="save-btn">
+
+                        <i class="fa-solid fa-floppy-disk"></i>
+
+                        Save Changes
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="/js/toast.js"></script>
+<script src="/js/ngo/profile.js"></script>
+
+<script>
+
+document.getElementById("currentDate").innerHTML =
+new Date().toLocaleDateString("en-IN",{
+
+weekday:"long",
+year:"numeric",
+month:"long",
+day:"numeric"
+
+});
+
+</script>
+
+</body>
+
+</html>

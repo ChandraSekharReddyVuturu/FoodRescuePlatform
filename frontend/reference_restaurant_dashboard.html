@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Restaurant Dashboard | Food Rescue Platform</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="/css/restaurant/dashboard.css">
+		  
+		  
+	<link rel="stylesheet" href="/css/common/toast.css">
+	<script src="/js/common/toast.js"></script>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ==========================
+            SIDEBAR
+    =========================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <i class="fa-solid fa-utensils"></i>
+
+            <h2>Food Rescue</h2>
+
+        </div>
+
+        <ul class="menu">
+
+            <li class="active">
+
+                <a href="/restaurant-dashboard">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="/donate-food">
+
+                    <i class="fa-solid fa-bowl-food"></i>
+
+                    <span>Donate Food</span>
+
+                </a>
+
+            </li>
+
+			<li>
+
+						                <a href="/requests">
+
+						                    <i class="fa-solid fa-list-check"></i>
+
+						                    <span>Manage Donations</span>
+
+						                </a>
+
+						            </li>
+									<li>
+			<li>
+
+									                <a href="/donation-history">
+
+									                    <i class="fa-solid fa-clock-rotate-left"></i>
+
+									                    <span>Donation History</span>
+
+									                </a>
+
+									            </li>
+						<li>
+
+            <li>
+
+                <a href="/profile">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <span>Profile</span>
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a href="#" id="logoutBtn">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    <span>Logout</span>
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- ==========================
+            MAIN CONTENT
+    =========================== -->
+
+    <main class="content">
+
+        <!-- Top Bar -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+
+                    Dashboard
+
+                </h1>
+
+                <p>
+
+                    Welcome back,
+                    <strong id="restaurantName">
+                        Restaurant
+                    </strong>
+
+                </p>
+
+            </div>
+
+            <div class="top-right">
+
+                
+
+                <img
+                        src="/images/icons/Restaurant.jpeg"
+                        alt="Restaurant">
+
+            </div>
+
+        </header>
+
+        <!-- Statistics -->
+
+        <section class="cards">
+
+            <div class="card">
+
+                <i class="fa-solid fa-bowl-food"></i>
+
+                <h2 id="totalDonations">
+
+                    0
+
+                </h2>
+
+                <p>
+
+                    Total Donations
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-hourglass-half"></i>
+
+                <h2 id="activeDonations">
+
+                    0
+
+                </h2>
+
+                <p>
+
+                    Active Donations
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-check-circle"></i>
+
+                <h2 id="completedDonations">
+
+                    0
+
+                </h2>
+
+                <p>
+
+                    Completed
+
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-handshake"></i>
+
+                <h2 id="acceptedRequests">
+
+                    0
+
+                </h2>
+
+                <p>
+
+                    Accepted Requests
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- Quick Actions -->
+
+        <section class="actions">
+
+            <a href="/donate-food" class="action">
+
+                <i class="fa-solid fa-plus"></i>
+
+                <span>Donate Food</span>
+
+            </a>
+
+            <a href="/food-list" class="action">
+
+                <i class="fa-solid fa-list"></i>
+
+                <span>My Donations</span>
+
+            </a>
+
+            <a href="/history" class="action">
+
+                <i class="fa-solid fa-clock"></i>
+
+                <span>History</span>
+
+            </a>
+
+            <a href="/profile" class="action">
+
+                <i class="fa-solid fa-user"></i>
+
+                <span>Profile</span>
+
+            </a>
+
+        </section>
+
+        <!-- Recent Donations -->
+
+        <section class="table-card">
+
+            <div class="table-header">
+
+                <h2>
+
+                    Recent Donations
+
+                </h2>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>Food</th>
+
+                    <th>Quantity</th>
+
+                    <th>Status</th>
+
+                    <th>Date</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody id="donationTable">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- Recent NGO Requests -->
+
+        <section class="table-card">
+
+            <div class="table-header">
+
+                <h2>
+
+                    Recent NGO Requests
+
+                </h2>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>NGO</th>
+
+                    <th>Food</th>
+
+                    <th>Status</th>
+
+                    <th>Date</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody id="requestTable">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="/js/restaurant/dashboard.js"></script>
+
+</body>
+
+</html>

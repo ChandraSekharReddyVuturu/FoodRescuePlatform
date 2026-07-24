@@ -1,0 +1,1139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*==========================================================
+                    GLOBAL RESET
+==========================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html,
+body{
+    width:100%;
+    min-height:100%;
+    overflow-x:hidden;
+    background:#F8FAFC;
+}
+
+body{
+    color:#374151;
+}
+
+a{
+    text-decoration:none;
+}
+
+.register-page-wrapper{
+
+    width:100%;
+
+    min-height:100vh;
+
+    background:#F8FAFC;
+
+}
+
+.register-container{
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+}
+
+/*==========================================================
+                    LEFT PANEL
+==========================================================*/
+
+.left-panel{
+
+    width:55%;
+
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:60px;
+
+    background:linear-gradient(135deg,#FFE082 0%,#FFC107 55%,#E6A100 100%);
+
+}
+
+/*==========================================================
+                DECORATION CIRCLES
+==========================================================*/
+
+.bg-circle-1{
+
+    position:absolute;
+
+    width:520px;
+
+    height:520px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.12);
+
+    top:-170px;
+
+    left:-170px;
+
+}
+
+.bg-circle-2{
+
+    position:absolute;
+
+    width:340px;
+
+    height:340px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    bottom:-100px;
+
+    right:-100px;
+
+}
+
+.overlay{
+
+    width:100%;
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.left-content{
+
+    max-width:520px;
+
+}
+
+/*==========================================================
+                        LOGO
+==========================================================*/
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:45px;
+
+}
+
+.logo i{
+
+    color:#FFFFFF;
+
+    font-size:52px;
+
+}
+
+.logo h1{
+
+    color:#FFFFFF;
+
+    font-size:40px;
+
+    font-weight:800;
+
+    letter-spacing:.5px;
+
+}
+
+/*==========================================================
+                    HEADING
+==========================================================*/
+
+.left-panel h2{
+
+    color:#FFFFFF;
+
+    font-size:56px;
+
+    font-weight:800;
+
+    line-height:1.15;
+
+    margin-bottom:20px;
+
+}
+
+.left-panel p{
+
+    color:rgba(255,255,255,.95);
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    margin-bottom:38px;
+
+}
+
+/*==========================================================
+                    BENEFITS
+==========================================================*/
+
+.benefits{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.benefit{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:18px 22px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.16);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    transition:.30s;
+
+}
+
+.benefit:hover{
+
+    transform:translateX(8px);
+
+}
+
+.benefit-icon{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    background:#FFFFFF;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-shrink:0;
+
+}
+
+.benefit-icon i{
+
+    color:#D18B00;
+
+    font-size:20px;
+
+}
+
+.benefit span{
+
+    color:#FFFFFF;
+
+    font-size:16px;
+
+    font-weight:600;
+
+}
+/*==========================================================
+                    RIGHT PANEL
+==========================================================*/
+
+.right-panel{
+
+    width:45%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:40px;
+
+    background:#F8FAFC;
+
+}
+
+/*==========================================================
+                    REGISTER CARD
+==========================================================*/
+
+.register-card{
+
+    width:100%;
+
+    max-width:560px;
+
+    background:#FFFFFF;
+
+    border-radius:24px;
+
+    padding:45px;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.08);
+
+    animation:fadeUp .7s ease;
+
+}
+
+/*==========================================================
+                    CARD TITLE
+==========================================================*/
+
+.register-card h2{
+
+    color:#2D3748;
+
+    font-size:42px;
+
+    font-weight:800;
+
+    margin-bottom:8px;
+
+}
+
+.subtitle{
+
+    color:#718096;
+
+    font-size:16px;
+
+    line-height:1.6;
+
+    margin-bottom:35px;
+
+}
+
+/*==========================================================
+                    FORM
+==========================================================*/
+
+form{
+
+    width:100%;
+
+}
+
+.register-page-wrapper .input-group{
+
+    width:100% !important;
+
+    margin-bottom:22px !important;
+
+    border:none !important;
+
+    box-shadow:none !important;
+
+    background:transparent !important;
+
+    padding:0 !important;
+
+}
+
+.register-page-wrapper .input-group label{
+
+    display:block !important;
+
+    margin-bottom:8px !important;
+
+    color:#374151 !important;
+
+    font-size:16px !important;
+
+    font-weight:700 !important;
+
+    letter-spacing:.3px !important;
+
+}
+
+/*==========================================================
+                    INPUT BOX
+==========================================================*/
+
+.register-page-wrapper .input-box{
+
+    position:relative !important;
+
+    width:100% !important;
+
+    display:flex !important;
+
+    align-items:center !important;
+
+    border:none !important;
+
+    box-shadow:none !important;
+
+    background:transparent !important;
+
+    padding:0 !important;
+
+    margin:0 !important;
+
+    outline:none !important;
+
+}
+
+/*==========================================================
+                    INPUTS
+==========================================================*/
+
+.register-page-wrapper .input-box input,
+.register-page-wrapper .input-box select{
+
+    width:100% !important;
+
+    height:64px !important;
+
+    border:2px solid #F4C84B !important;
+
+    border-radius:18px !important;
+
+    background:#FFFFFF !important;
+
+    outline:none !important;
+
+    box-shadow:none !important;
+
+    font-size:16px !important;
+
+    font-weight:500 !important;
+
+    color:#374151 !important;
+
+    padding-left:72px !important;
+
+    padding-right:60px !important;
+
+    padding-top:0 !important;
+
+    padding-bottom:0 !important;
+
+    transition:border-color .30s ease, box-shadow .30s ease !important;
+
+}
+
+.register-page-wrapper .input-box input::placeholder{
+
+    color:#9CA3AF !important;
+
+    font-size:15px !important;
+
+    font-weight:400 !important;
+
+}
+
+.register-page-wrapper .input-box input:focus,
+.register-page-wrapper .input-box select:focus{
+
+    border-color:#D39200 !important;
+
+    box-shadow:0 0 0 4px rgba(255,193,7,.18) !important;
+
+}
+
+/*==========================================================
+                    SELECT
+==========================================================*/
+
+.register-page-wrapper .input-box select{
+
+    appearance:none !important;
+
+    -webkit-appearance:none !important;
+
+    -moz-appearance:none !important;
+
+    cursor:pointer !important;
+
+    background-image:url("data:image/svg+xml;utf8,<svg fill='%23D39200' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") !important;
+
+    background-repeat:no-repeat !important;
+
+    background-position:right 20px center !important;
+
+}
+
+.register-page-wrapper .input-box select option{
+
+    color:#374151 !important;
+
+    font-size:15px !important;
+
+}
+/*==========================================================
+                    ICONS
+==========================================================*/
+
+.register-page-wrapper .icon-left{
+
+    position:absolute !important;
+
+    left:24px !important;
+
+    top:50% !important;
+
+    transform:translateY(-50%) !important;
+
+    width:24px !important;
+
+    height:24px !important;
+
+    display:flex !important;
+
+    justify-content:center !important;
+
+    align-items:center !important;
+
+    color:#D39200 !important;
+
+    pointer-events:none !important;
+
+    z-index:10 !important;
+
+}
+
+.register-page-wrapper .icon-left i{
+
+    font-size:20px !important;
+
+    color:#D39200 !important;
+
+    line-height:1 !important;
+
+}
+
+/*==========================================================
+                PASSWORD TOGGLE
+==========================================================*/
+
+.register-page-wrapper .toggle-password{
+
+    position:absolute !important;
+
+    right:22px !important;
+
+    top:50% !important;
+
+    transform:translateY(-50%) !important;
+
+    width:24px !important;
+
+    height:24px !important;
+
+    display:flex !important;
+
+    justify-content:center !important;
+
+    align-items:center !important;
+
+    color:#D39200 !important;
+
+    cursor:pointer !important;
+
+    transition:.3s !important;
+
+    z-index:10 !important;
+
+}
+
+.register-page-wrapper .toggle-password:hover{
+
+    color:#B77900 !important;
+
+}
+
+.register-page-wrapper .toggle-password i{
+
+    font-size:20px !important;
+
+    color:#D39200 !important;
+
+    line-height:1 !important;
+
+}
+
+/*==========================================================
+                SELECT ARROW
+==========================================================*/
+
+.select-arrow{
+
+    position:absolute;
+
+    right:22px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:20px;
+
+    height:20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#D39200;
+
+    pointer-events:none;
+
+}
+
+.select-arrow i{
+
+    font-size:15px;
+
+}
+
+/*==========================================================
+                INPUT STATES
+==========================================================*/
+
+.input-box input:hover,
+.input-box select:hover{
+
+    border-color:#E6A100;
+
+}
+
+.input-box input:focus,
+.input-box select:focus{
+
+    border-color:#D39200;
+
+    box-shadow:0 0 0 5px rgba(255,193,7,.18);
+
+}
+
+.input-box input:disabled,
+.input-box select:disabled{
+
+    background:#F3F4F6;
+
+    cursor:not-allowed;
+
+    opacity:.75;
+
+}
+
+/*==========================================================
+                REGISTER BUTTON
+==========================================================*/
+
+.register-btn{
+
+    width:100%;
+
+    height:60px;
+
+    margin-top:5px;
+
+    border:none;
+
+    border-radius:18px;
+
+    background:linear-gradient(135deg,#FFD54F,#FFC107,#E6A100);
+
+    color:#FFFFFF;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    cursor:pointer;
+
+    transition:.30s;
+
+}
+
+.register-btn i{
+
+    font-size:18px;
+
+}
+
+.register-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 14px 30px rgba(255,193,7,.35);
+
+}
+
+.register-btn:active{
+
+    transform:scale(.98);
+
+}
+
+.register-btn:disabled{
+
+    opacity:.75;
+
+    cursor:not-allowed;
+
+    transform:none;
+
+    box-shadow:none;
+
+}
+
+/*==========================================================
+                PLACEHOLDERS
+==========================================================*/
+
+.input-box input::placeholder{
+
+    color:#9CA3AF;
+
+    font-size:15px;
+
+}
+
+.input-box select{
+
+    color:#374151;
+
+    font-weight:500;
+
+}
+/*==========================================================
+                TERMS & CONDITIONS
+==========================================================*/
+
+.terms{
+
+    margin:8px 0 24px;
+
+}
+
+.terms label{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+    font-size:15px;
+
+    color:#6B7280;
+
+    line-height:1.6;
+
+    cursor:pointer;
+
+}
+
+.terms input[type="checkbox"]{
+
+    width:18px;
+
+    height:18px;
+
+    margin-top:2px;
+
+    accent-color:#FFC107;
+
+    cursor:pointer;
+
+    flex-shrink:0;
+
+}
+
+.terms a{
+
+    color:#D39200;
+
+    font-weight:600;
+
+    text-decoration:none;
+
+    margin-left:4px;
+
+    transition:.3s;
+
+}
+
+.terms a:hover{
+
+    color:#B77900;
+
+    text-decoration:underline;
+
+}
+
+/*==========================================================
+                    DIVIDER
+==========================================================*/
+
+.divider{
+
+    display:flex;
+
+    align-items:center;
+
+    margin:30px 0;
+
+}
+
+.divider::before,
+.divider::after{
+
+    content:"";
+
+    flex:1;
+
+    height:1px;
+
+    background:#E5E7EB;
+
+}
+
+.divider span{
+
+    padding:0 16px;
+
+    color:#94A3B8;
+
+    font-size:14px;
+
+    font-weight:600;
+
+}
+
+/*==========================================================
+                    LOGIN LINK
+==========================================================*/
+
+.login-link{
+
+    text-align:center;
+
+    color:#6B7280;
+
+    font-size:15px;
+
+    margin-bottom:18px;
+
+}
+
+.login-link a{
+
+    color:#D39200;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.login-link a:hover{
+
+    color:#B77900;
+
+}
+
+/*==========================================================
+                    BACK HOME
+==========================================================*/
+
+.back-home{
+
+    text-align:center;
+
+}
+
+.back-home a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#6B7280;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.back-home a:hover{
+
+    color:#D39200;
+
+}
+
+.back-home i{
+
+    font-size:14px;
+
+}
+
+/*==========================================================
+                CARD ANIMATION
+==========================================================*/
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/*==========================================================
+                RESPONSIVE
+==========================================================*/
+
+@media (max-width:1100px){
+
+    .register-container{
+
+        flex-direction:column;
+
+    }
+
+    .left-panel,
+    .right-panel{
+
+        width:100%;
+
+    }
+
+    .left-panel{
+
+        min-height:420px;
+
+        padding:45px;
+
+    }
+
+    .left-content{
+
+        max-width:700px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .left-panel{
+
+        padding:35px 25px;
+
+    }
+
+    .logo{
+
+        justify-content:center;
+
+    }
+
+    .left-content{
+
+        text-align:center;
+
+    }
+
+    .left-panel h2{
+
+        font-size:42px;
+
+    }
+
+    .left-panel p{
+
+        font-size:16px;
+
+    }
+
+    .benefit{
+
+        padding:16px 18px;
+
+    }
+
+    .register-card{
+
+        padding:32px;
+
+    }
+
+    .register-card h2{
+
+        font-size:34px;
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    .left-panel{
+
+        display:none;
+
+    }
+
+    .right-panel{
+
+        width:100%;
+
+        min-height:100vh;
+
+        padding:20px;
+
+    }
+
+    .register-card{
+
+        border-radius:18px;
+
+        padding:24px;
+
+        box-shadow:none;
+
+    }
+
+    .register-card h2{
+
+        font-size:30px;
+
+    }
+
+    .subtitle{
+
+        font-size:15px;
+
+    }
+
+    .input-box input,
+    .input-box select{
+
+        height:56px;
+
+        font-size:15px;
+
+        padding-left:68px;
+
+        padding-right:55px;
+
+    }
+
+    .register-btn{
+
+        height:56px;
+
+        font-size:16px;
+
+    }
+
+}
+
+@media (max-width:400px){
+
+    .register-card{
+
+        padding:18px;
+
+    }
+
+    .register-card h2{
+
+        font-size:26px;
+
+    }
+
+    .input-group{
+
+        margin-bottom:18px;
+
+    }
+
+    .benefit{
+
+        gap:14px;
+
+        padding:14px;
+
+    }
+
+    .benefit-icon{
+
+        width:44px;
+
+        height:44px;
+
+    }
+
+}

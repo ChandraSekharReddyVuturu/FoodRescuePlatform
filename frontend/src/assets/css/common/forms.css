@@ -1,0 +1,16 @@
+input,
+select,
+textarea{
+    border:1px solid #F5D76E;
+    border-radius:10px;
+    padding:12px;
+    transition:.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    outline:none;
+    border-color:#F4B400;
+    box-shadow:0 0 0 4px rgba(244,180,0,.15);
+}

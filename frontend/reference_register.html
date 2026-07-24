@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | Food Rescue Platform</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="/css/public/register.css">
+
+</head>
+
+<body>
+
+<div class="register-container">
+
+    <!-- LEFT PANEL -->
+
+    <div class="left-panel">
+
+        <div class="overlay">
+
+            <div class="logo">
+
+                <i class="fa-solid fa-hand-holding-heart"></i>
+
+                <h1>Food Rescue</h1>
+
+            </div>
+
+            <h2>
+
+                Join Our Mission
+
+            </h2>
+
+            <p>
+
+                Help reduce food waste and feed people in need by
+                becoming a verified Restaurant, NGO or Volunteer.
+
+            </p>
+
+            <div class="benefits">
+
+                <div class="benefit">
+
+                    <i class="fa-solid fa-store"></i>
+
+                    <span>Donate Surplus Food</span>
+
+                </div>
+
+                <div class="benefit">
+
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+
+                    <span>Support Local Communities</span>
+
+                </div>
+
+                <div class="benefit">
+
+                    <i class="fa-solid fa-truck"></i>
+
+                    <span>Deliver Food Efficiently</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT PANEL -->
+
+    <div class="right-panel">
+
+        <div class="register-card">
+
+            <h2>Create Account</h2>
+
+            <p>
+
+                Register to continue
+
+            </p>
+
+            <form id="registerForm">
+
+                <!-- Full Name -->
+
+                <div class="input-group">
+
+                    <label>
+
+                        Full Name
+
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <input
+                                type="text"
+                                id="fullName"
+                                placeholder="Enter Full Name"
+                                required>
+
+                    </div>
+
+                </div>
+
+                <!-- Email -->
+
+                <div class="input-group">
+
+                    <label>
+
+                        Email
+
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter Email"
+                                required>
+
+                    </div>
+
+                </div>
+
+                <!-- Role -->
+
+                <div class="input-group">
+
+                    <label>
+
+                        Register As
+
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-users"></i>
+
+                        <select
+                                id="role"
+                                required>
+
+                            <option value="">
+
+                                Select Role
+
+                            </option>
+
+                            <option value="RESTAURANT">
+
+                                🍽 Restaurant
+
+                            </option>
+
+                            <option value="NGO">
+
+                                ❤️ NGO
+
+                            </option>
+
+                            <option value="VOLUNTEER">
+
+                                🚚 Volunteer
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <!-- Password -->
+
+                <div class="input-group">
+
+                    <label>
+
+                        Password
+
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                                type="password"
+                                id="password"
+                                placeholder="Create Password"
+                                required>
+
+                        <i class="fa-solid fa-eye"
+                           id="togglePassword"></i>
+
+                    </div>
+
+                </div>
+
+                <!-- Confirm Password -->
+
+                <div class="input-group">
+
+                    <label>
+
+                        Confirm Password
+
+                    </label>
+
+                    <div class="input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                                type="password"
+                                id="confirmPassword"
+                                placeholder="Confirm Password"
+                                required>
+
+                        <i class="fa-solid fa-eye"
+                           id="toggleConfirmPassword"></i>
+
+                    </div>
+
+                </div>
+
+                <!-- Terms -->
+
+                <div class="terms">
+
+                    <label>
+
+                        <input
+                                type="checkbox"
+                                required>
+
+                        I agree to the
+
+                        <a href="#">
+
+                            Terms & Conditions
+
+                        </a>
+
+                    </label>
+
+                </div>
+
+                <!-- Button -->
+
+                <button
+                        type="submit"
+                        class="register-btn">
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                    Create Account
+
+                </button>
+
+            </form>
+
+            <div class="divider">
+
+                <span>
+
+                    OR
+
+                </span>
+
+            </div>
+
+            <div class="login-link">
+
+                Already have an account?
+
+                <a href="/login">
+
+                    Login
+
+                </a>
+
+            </div>
+
+            <div class="back-home">
+
+                <a href="/">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Back to Home
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="/js/public/register.js"></script>
+<link rel="stylesheet" href="/css/common/toast.css">
+	<script src="/js/common/toast.js"></script>
+
+</body>
+
+</html>
