@@ -247,13 +247,13 @@ src/main/resources/application.properties
 
 ## 👨‍💻 Team
 
-**V. Chandra Sekhar Reddy**
+**V. Chandra Sekhar Reddy** |
 
-**V. Avinash**
+**V. Avinash** |
 
-**G. Chandu**
+**G. Chandu** |
 
-**M. Ajay**
+**M. Ajay** |
 
 **P. Ravi Teja**
 
