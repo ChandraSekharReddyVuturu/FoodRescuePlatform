@@ -10,8 +10,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "pickups")
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class Pickup {
 
     @Id

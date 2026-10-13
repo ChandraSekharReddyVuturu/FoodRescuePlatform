@@ -50,39 +50,16 @@ public class AdminServiceImpl implements AdminService {
 
 	    Map<String,Object> data = new HashMap<>();
 
-	    data.put(
-	        "totalUsers",
-	        userRepository.count()
-	    );
-
-	    data.put(
-	        "totalRestaurants",
-	        restaurantRepository.count()
-	    );
-
-	    data.put(
-	        "totalNgos",
-	        ngoRepository.count()
-	    );
-
-	    data.put(
-	        "totalVolunteers",
-	        volunteerRepository.count()
-	    );
-
-	    data.put(
-	        "totalDonations",
-	        donationRepository.count()
-	    );
-
-
-	    data.put(
-	    	    "completedDeliveries",
-	    	    donationRepository.countByStatus(
-	    	        DonationStatus.COMPLETED
-	    	    )
-	    	);
-
+	    data.put("totalUsers", userRepository.count());
+	    data.put("totalRestaurants", restaurantRepository.count());
+	    data.put("totalNgos", ngoRepository.count());
+	    data.put("totalVolunteers", volunteerRepository.count());
+	    data.put("totalDonations", donationRepository.count());
+	    data.put("completedDeliveries", donationRepository.countByStatus(DonationStatus.COMPLETED));
+	    data.put("activeDonations", donationRepository.countByStatus(DonationStatus.AVAILABLE));
+	    data.put("expiredDonations", donationRepository.countByStatus(DonationStatus.EXPIRED));
+	    data.put("assignedDonations", donationRepository.countByStatus(DonationStatus.ASSIGNED));
+	    data.put("pickedUpDonations", donationRepository.countByStatus(DonationStatus.PICKED_UP));
 
 	    return data;
 	}

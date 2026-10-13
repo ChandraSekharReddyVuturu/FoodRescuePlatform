@@ -67,6 +67,16 @@ public class FoodRequestServiceImpl implements FoodRequestService {
 
         request.setRequestStatus(status);
 
+        if ("ACCEPTED".equalsIgnoreCase(status) || "APPROVED".equalsIgnoreCase(status)) {
+            Donation donation = request.getDonation();
+            if (donation != null) {
+                donation.setNgo(request.getNgo());
+                donation.setStatus(com.foodrescue.enums.DonationStatus.ACCEPTED);
+                donation.setAcceptedAt(LocalDateTime.now());
+                donationRepository.save(donation);
+            }
+        }
+
         FoodRequest updated = foodRequestRepository.save(request);
 
         return convertToDTO(updated);
@@ -171,6 +181,10 @@ public class FoodRequestServiceImpl implements FoodRequestService {
         dto.setRequestStatus(request.getRequestStatus());
         dto.setRequestDate(request.getRequestDate());
         dto.setRemarks(request.getRemarks());
+        if (request.getNgo() != null) {
+            dto.setNgoName(request.getNgo().getNgoName());
+        }
+
         dto.setRestaurantName(
         	    request.getDonation()
         	           .getRestaurant()

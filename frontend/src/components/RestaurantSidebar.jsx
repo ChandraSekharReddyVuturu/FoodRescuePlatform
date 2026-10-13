@@ -13,52 +13,136 @@ export default function RestaurantSidebar() {
   };
 
   return (
-    <aside className="restaurant-sidebar">
-      <div className="logo">
-        <i className="fa-solid fa-utensils"></i>
-        <h2>Food Rescue</h2>
+    <aside className="sidebar" style={{ width: '260px', background: 'linear-gradient(180deg, #F4B400 0%, #E6A700 100%)', color: '#374151', minHeight: '100vh', position: 'fixed', top: 0, left: 0, zIndex: 100, boxShadow: '2px 0 10px rgba(0,0,0,0.05)' }}>
+      <div className="logo" style={{ padding: '25px', display: 'flex', alignItems: 'center', gap: '12px', borderBottom: '1px solid rgba(0,0,0,0.1)' }}>
+        <i className="fa-solid fa-utensils" style={{ fontSize: '28px', color: '#374151' }}></i>
+        <h2 style={{ fontSize: '22px', fontWeight: '800', margin: 0, color: '#374151' }}>Food Rescue</h2>
       </div>
 
-      <ul className="menu">
-        <li className={location.pathname === '/restaurant-dashboard' ? 'active' : ''}>
-          <Link to="/restaurant-dashboard">
-            <i className="fa-solid fa-house"></i>
-            <span>Dashboard</span>
+      <ul style={{ listStyle: 'none', padding: '20px 10px', margin: 0 }}>
+        <li style={{ marginBottom: '8px' }}>
+          <Link
+            to="/restaurant-dashboard"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+              padding: '12px 18px',
+              borderRadius: '10px',
+              color: location.pathname === '/restaurant-dashboard' ? '#F4B400' : '#374151',
+              background: location.pathname === '/restaurant-dashboard' ? '#374151' : 'transparent',
+              fontWeight: location.pathname === '/restaurant-dashboard' ? '700' : '600',
+              textDecoration: 'none',
+              transition: '0.2s ease',
+            }}
+          >
+            <i className="fa-solid fa-house" style={{ width: '20px' }}></i>
+            Dashboard
           </Link>
         </li>
 
-        <li className={location.pathname === '/donate-food' ? 'active' : ''}>
-          <Link to="/donate-food">
-            <i className="fa-solid fa-bowl-food"></i>
-            <span>Donate Food</span>
+        <li style={{ marginBottom: '8px' }}>
+          <Link
+            to="/donate-food"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+              padding: '12px 18px',
+              borderRadius: '10px',
+              color: location.pathname === '/donate-food' ? '#F4B400' : '#374151',
+              background: location.pathname === '/donate-food' ? '#374151' : 'transparent',
+              fontWeight: location.pathname === '/donate-food' ? '700' : '600',
+              textDecoration: 'none',
+              transition: '0.2s ease',
+            }}
+          >
+            <i className="fa-solid fa-plus" style={{ width: '20px' }}></i>
+            Donate Food
           </Link>
         </li>
 
-        <li className={location.pathname === '/requests' || location.pathname === '/food-list' || location.pathname === '/restaurant-requests' ? 'active' : ''}>
-          <Link to="/requests">
-            <i className="fa-solid fa-list-check"></i>
-            <span>Manage Donations</span>
+        <li style={{ marginBottom: '8px' }}>
+          <Link
+            to="/requests"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+              padding: '12px 18px',
+              borderRadius: '10px',
+              color: location.pathname === '/requests' || location.pathname === '/food-list' ? '#F4B400' : '#374151',
+              background: location.pathname === '/requests' || location.pathname === '/food-list' ? '#374151' : 'transparent',
+              fontWeight: location.pathname === '/requests' || location.pathname === '/food-list' ? '700' : '600',
+              textDecoration: 'none',
+              transition: '0.2s ease',
+            }}
+          >
+            <i className="fa-solid fa-bell" style={{ width: '20px' }}></i>
+            Manage Requests
           </Link>
         </li>
 
-        <li className={location.pathname === '/donation-history' || location.pathname === '/history' ? 'active' : ''}>
-          <Link to="/donation-history">
-            <i className="fa-solid fa-clock-rotate-left"></i>
-            <span>Donation History</span>
+        <li style={{ marginBottom: '8px' }}>
+          <Link
+            to="/donation-history"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+              padding: '12px 18px',
+              borderRadius: '10px',
+              color: location.pathname === '/donation-history' || location.pathname === '/history' ? '#F4B400' : '#374151',
+              background: location.pathname === '/donation-history' || location.pathname === '/history' ? '#374151' : 'transparent',
+              fontWeight: location.pathname === '/donation-history' || location.pathname === '/history' ? '700' : '600',
+              textDecoration: 'none',
+              transition: '0.2s ease',
+            }}
+          >
+            <i className="fa-solid fa-clock-rotate-left" style={{ width: '20px' }}></i>
+            Donation History
           </Link>
         </li>
 
-        <li className={location.pathname === '/profile' || location.pathname === '/restaurant-profile' ? 'active' : ''}>
-          <Link to="/profile">
-            <i className="fa-solid fa-user"></i>
-            <span>Profile</span>
+        <li style={{ marginBottom: '8px' }}>
+          <Link
+            to="/profile"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+              padding: '12px 18px',
+              borderRadius: '10px',
+              color: location.pathname === '/profile' ? '#F4B400' : '#374151',
+              background: location.pathname === '/profile' ? '#374151' : 'transparent',
+              fontWeight: location.pathname === '/profile' ? '700' : '600',
+              textDecoration: 'none',
+              transition: '0.2s ease',
+            }}
+          >
+            <i className="fa-solid fa-user" style={{ width: '20px' }}></i>
+            Profile
           </Link>
         </li>
 
-        <li>
-          <a href="#" onClick={handleLogout} id="logoutBtn">
-            <i className="fa-solid fa-right-from-bracket"></i>
-            <span>Logout</span>
+        <li style={{ marginTop: '30px' }}>
+          <a
+            href="#"
+            onClick={handleLogout}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+              padding: '12px 18px',
+              borderRadius: '10px',
+              color: '#b91c1c',
+              textDecoration: 'none',
+              fontWeight: '700',
+              transition: '0.2s ease',
+            }}
+          >
+            <i className="fa-solid fa-right-from-bracket" style={{ width: '20px' }}></i>
+            Logout
           </a>
         </li>
       </ul>

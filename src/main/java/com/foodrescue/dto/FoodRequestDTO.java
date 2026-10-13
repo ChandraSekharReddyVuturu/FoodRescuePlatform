@@ -8,6 +8,8 @@ public class FoodRequestDTO {
 
     private Long ngoId;
 
+    private String ngoName;
+
     private Long donationId;
 
     private String requestStatus;
@@ -54,6 +56,14 @@ public class FoodRequestDTO {
 
     public void setNgoId(Long ngoId) {
         this.ngoId = ngoId;
+    }
+
+    public String getNgoName() {
+        return ngoName;
+    }
+
+    public void setNgoName(String ngoName) {
+        this.ngoName = ngoName;
     }
 
     public Long getDonationId() {

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import Toast from '../../components/Toast';
 import volunteerService from '../../services/volunteerService';
 import '../../assets/css/volunteer/volunteer-register.css';
 
@@ -10,9 +11,10 @@ export default function VolunteerRegister() {
     gender: '',
     city: '',
     address: '',
-    availability: '',
+    availability: 'AVAILABLE',
   });
   const [loading, setLoading] = useState(false);
+  const [toast, setToast] = useState({ message: '', type: '' });
 
   const navigate = useNavigate();
 
@@ -20,50 +22,68 @@ export default function VolunteerRegister() {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
+  const validate = () => {
+    if (!formData.fullName.trim()) {
+      setToast({ message: 'Enter Full Name', type: 'warning' });
+      return false;
+    }
+    if (!/^[0-9]{10}$/.test(formData.phone.trim())) {
+      setToast({ message: 'Enter Valid 10-digit Phone Number', type: 'warning' });
+      return false;
+    }
+    if (!formData.gender) {
+      setToast({ message: 'Select Gender', type: 'warning' });
+      return false;
+    }
+    if (!formData.city.trim()) {
+      setToast({ message: 'Enter City', type: 'warning' });
+      return false;
+    }
+    if (!formData.address.trim()) {
+      setToast({ message: 'Enter Address', type: 'warning' });
+      return false;
+    }
+    if (!formData.availability) {
+      setToast({ message: 'Select Availability', type: 'warning' });
+      return false;
+    }
+    return true;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const userId = Number(localStorage.getItem('userId'));
-    const volunteerData = { ...formData, userId };
+    if (!validate()) return;
 
-    if (!volunteerData.fullName.trim()) {
-      alert('Enter Full Name');
+    const userId = Number(localStorage.getItem('userId'));
+    if (!userId) {
+      setToast({ message: 'User account session missing. Please register or login first.', type: 'error' });
+      setTimeout(() => navigate('/register'), 1500);
       return;
     }
-    if (!/^[0-9]{10}$/.test(volunteerData.phone.trim())) {
-      alert('Enter Valid Phone Number');
-      return;
-    }
-    if (!volunteerData.gender) {
-      alert('Select Gender');
-      return;
-    }
-    if (!volunteerData.city.trim()) {
-      alert('Enter City');
-      return;
-    }
-    if (!volunteerData.address.trim()) {
-      alert('Enter Address');
-      return;
-    }
-    if (!volunteerData.availability) {
-      alert('Select Availability');
-      return;
-    }
+
+    const volunteerData = { ...formData, userId };
 
     setLoading(true);
 
     try {
       const data = await volunteerService.registerVolunteer(volunteerData);
 
-      localStorage.setItem('volunteerId', data.volunteerId);
-      localStorage.setItem('volunteerName', data.fullName);
+      if (data && data.volunteerId) {
+        localStorage.setItem('volunteerId', data.volunteerId);
+        localStorage.setItem('volunteerName', data.fullName);
+      }
 
-      alert('Volunteer Registered Successfully!');
-      navigate('/volunteer-dashboard');
+      setToast({ message: 'Volunteer Profile Registered Successfully!', type: 'success' });
+      setTimeout(() => {
+        navigate('/volunteer-dashboard');
+      }, 1200);
     } catch (error) {
       console.error(error);
-      alert(error.response?.data?.message || error.message || 'Registration failed');
+      setToast({
+        message: error.response?.data?.message || error.message || 'Volunteer registration failed',
+        type: 'error',
+      });
     } finally {
       setLoading(false);
     }
@@ -71,6 +91,8 @@ export default function VolunteerRegister() {
 
   return (
     <div className="volunteer-register-page-wrapper">
+      <Toast toast={toast} onClose={() => setToast({ message: '', type: '' })} />
+
       <div className="register-container">
         {/* LEFT PANEL */}
         <div className="left-panel">
@@ -100,7 +122,7 @@ export default function VolunteerRegister() {
                 <div className="benefit-icon">
                   <i className="fa-solid fa-hand-holding-heart"></i>
                 </div>
-                <span>Support NGOs</span>
+                <span>Support Local NGOs</span>
               </div>
 
               <div className="benefit">
@@ -122,7 +144,7 @@ export default function VolunteerRegister() {
             <form onSubmit={handleSubmit}>
               {/* Full Name */}
               <div className="input-group">
-                <label htmlFor="fullName">Full Name</label>
+                <label htmlFor="fullName">Full Name *</label>
                 <div className="input-box">
                   <span className="icon-left">
                     <i className="fa-solid fa-user"></i>
@@ -140,7 +162,7 @@ export default function VolunteerRegister() {
 
               {/* Phone */}
               <div className="input-group">
-                <label htmlFor="phone">Phone Number</label>
+                <label htmlFor="phone">Phone Number *</label>
                 <div className="input-box">
                   <span className="icon-left">
                     <i className="fa-solid fa-phone"></i>
@@ -148,7 +170,7 @@ export default function VolunteerRegister() {
                   <input
                     type="tel"
                     id="phone"
-                    placeholder="Phone Number"
+                    placeholder="10-digit Phone Number"
                     maxLength="10"
                     value={formData.phone}
                     onChange={handleChange}
@@ -159,7 +181,7 @@ export default function VolunteerRegister() {
 
               {/* Gender */}
               <div className="input-group">
-                <label htmlFor="gender">Gender</label>
+                <label htmlFor="gender">Gender *</label>
                 <div className="input-box">
                   <span className="icon-left">
                     <i className="fa-solid fa-venus-mars"></i>
@@ -180,7 +202,7 @@ export default function VolunteerRegister() {
 
               {/* City */}
               <div className="input-group">
-                <label htmlFor="city">City</label>
+                <label htmlFor="city">City *</label>
                 <div className="input-box">
                   <span className="icon-left">
                     <i className="fa-solid fa-location-dot"></i>
@@ -198,10 +220,10 @@ export default function VolunteerRegister() {
 
               {/* Address */}
               <div className="input-group">
-                <label htmlFor="address">Address</label>
+                <label htmlFor="address">Address *</label>
                 <textarea
                   id="address"
-                  rows="4"
+                  rows="3"
                   placeholder="Complete Address"
                   value={formData.address}
                   onChange={handleChange}
@@ -211,7 +233,7 @@ export default function VolunteerRegister() {
 
               {/* Availability */}
               <div className="input-group">
-                <label htmlFor="availability">Availability</label>
+                <label htmlFor="availability">Availability *</label>
                 <div className="input-box">
                   <span className="icon-left">
                     <i className="fa-solid fa-clock"></i>
@@ -222,7 +244,6 @@ export default function VolunteerRegister() {
                     onChange={handleChange}
                     required
                   >
-                    <option value="">Select Availability</option>
                     <option value="AVAILABLE">Available</option>
                     <option value="NOT_AVAILABLE">Not Available</option>
                   </select>
@@ -232,7 +253,7 @@ export default function VolunteerRegister() {
               {/* Button */}
               <button type="submit" className="register-btn" disabled={loading}>
                 <i className={`fa-solid ${loading ? 'fa-spinner fa-spin' : 'fa-user-plus'}`}></i>
-                {loading ? 'Registering...' : 'Register Volunteer'}
+                {loading ? 'Registering Volunteer...' : 'Register Volunteer'}
               </button>
             </form>
 

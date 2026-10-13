@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import Toast from '../../components/Toast';
 import restaurantService from '../../services/restaurantService';
 import '../../assets/css/restaurant/restaurant-register.css';
 
@@ -13,6 +14,7 @@ export default function RestaurantRegister() {
     address: '',
   });
   const [loading, setLoading] = useState(false);
+  const [toast, setToast] = useState({ message: '', type: '' });
 
   const navigate = useNavigate();
 
@@ -20,50 +22,68 @@ export default function RestaurantRegister() {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
+  const validate = () => {
+    if (!formData.restaurantName.trim()) {
+      setToast({ message: 'Enter Restaurant Name', type: 'warning' });
+      return false;
+    }
+    if (!formData.ownerName.trim()) {
+      setToast({ message: 'Enter Owner Name', type: 'warning' });
+      return false;
+    }
+    if (!/^[0-9]{10}$/.test(formData.phone.trim())) {
+      setToast({ message: 'Enter Valid 10-digit Phone Number', type: 'warning' });
+      return false;
+    }
+    if (!formData.licenseNumber.trim()) {
+      setToast({ message: 'Enter Food License Number', type: 'warning' });
+      return false;
+    }
+    if (!formData.city.trim()) {
+      setToast({ message: 'Enter City', type: 'warning' });
+      return false;
+    }
+    if (!formData.address.trim()) {
+      setToast({ message: 'Enter Complete Address', type: 'warning' });
+      return false;
+    }
+    return true;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const userId = Number(localStorage.getItem('userId'));
-    const restaurantData = { ...formData, userId };
+    if (!validate()) return;
 
-    if (!restaurantData.restaurantName.trim()) {
-      alert('Enter Restaurant Name');
+    const userId = Number(localStorage.getItem('userId'));
+    if (!userId) {
+      setToast({ message: 'User account session not found. Please register/login first.', type: 'error' });
+      setTimeout(() => navigate('/register'), 1500);
       return;
     }
-    if (!restaurantData.ownerName.trim()) {
-      alert('Enter Owner Name');
-      return;
-    }
-    if (!/^[0-9]{10}$/.test(restaurantData.phone.trim())) {
-      alert('Enter Valid Phone Number');
-      return;
-    }
-    if (!restaurantData.licenseNumber.trim()) {
-      alert('Enter License Number');
-      return;
-    }
-    if (!restaurantData.city.trim()) {
-      alert('Enter City');
-      return;
-    }
-    if (!restaurantData.address.trim()) {
-      alert('Enter Address');
-      return;
-    }
+
+    const restaurantData = { ...formData, userId };
 
     setLoading(true);
 
     try {
       const data = await restaurantService.registerRestaurant(restaurantData);
 
-      localStorage.setItem('restaurantId', data.restaurantId);
-      localStorage.setItem('restaurantName', data.restaurantName);
+      if (data && data.restaurantId) {
+        localStorage.setItem('restaurantId', data.restaurantId);
+        localStorage.setItem('restaurantName', data.restaurantName);
+      }
 
-      alert('Restaurant Registered Successfully!');
-      navigate('/restaurant-dashboard');
+      setToast({ message: 'Restaurant Profile Registered Successfully!', type: 'success' });
+      setTimeout(() => {
+        navigate('/restaurant-dashboard');
+      }, 1200);
     } catch (error) {
       console.error(error);
-      alert(error.response?.data?.message || error.message || 'Registration failed');
+      setToast({
+        message: error.response?.data?.message || error.message || 'Restaurant registration failed',
+        type: 'error',
+      });
     } finally {
       setLoading(false);
     }
@@ -71,6 +91,8 @@ export default function RestaurantRegister() {
 
   return (
     <div className="restaurant-register-page-wrapper">
+      <Toast toast={toast} onClose={() => setToast({ message: '', type: '' })} />
+
       <div className="register-container">
         {/* LEFT PANEL */}
         <div className="left-panel">
@@ -93,21 +115,21 @@ export default function RestaurantRegister() {
                 <div className="benefit-icon">
                   <i className="fa-solid fa-utensils"></i>
                 </div>
-                <span>Donate Extra Food</span>
+                <span>Donate Surplus Food</span>
               </div>
 
               <div className="benefit">
                 <div className="benefit-icon">
                   <i className="fa-solid fa-earth-asia"></i>
                 </div>
-                <span>Reduce Food Waste</span>
+                <span>Zero Food Waste</span>
               </div>
 
               <div className="benefit">
                 <div className="benefit-icon">
                   <i className="fa-solid fa-hand-holding-heart"></i>
                 </div>
-                <span>Support Your Community</span>
+                <span>Social Impact Metrics</span>
               </div>
             </div>
           </div>
@@ -116,13 +138,13 @@ export default function RestaurantRegister() {
         {/* RIGHT PANEL */}
         <div className="right-panel">
           <div className="register-card">
-            <h2>Restaurant Details</h2>
-            <p className="subtitle">Complete your restaurant profile to continue.</p>
+            <h2>Complete Restaurant Details</h2>
+            <p className="subtitle">Provide your establishment details to activate your restaurant account.</p>
 
             <form onSubmit={handleSubmit}>
               {/* Restaurant Name */}
               <div className="input-group">
-                <label htmlFor="restaurantName">Restaurant Name</label>
+                <label htmlFor="restaurantName">Restaurant Name *</label>
                 <div className="input-box">
                   <span className="icon-left">
                     <i className="fa-solid fa-store"></i>
@@ -130,7 +152,7 @@ export default function RestaurantRegister() {
                   <input
                     type="text"
                     id="restaurantName"
-                    placeholder="Restaurant Name"
+                    placeholder="e.g. Spice Garden Bistro"
                     value={formData.restaurantName}
                     onChange={handleChange}
                     required
@@ -140,7 +162,7 @@ export default function RestaurantRegister() {
 
               {/* Owner Name */}
               <div className="input-group">
-                <label htmlFor="ownerName">Owner Name</label>
+                <label htmlFor="ownerName">Owner / Manager Name *</label>
                 <div className="input-box">
                   <span className="icon-left">
                     <i className="fa-solid fa-user"></i>
@@ -148,7 +170,7 @@ export default function RestaurantRegister() {
                   <input
                     type="text"
                     id="ownerName"
-                    placeholder="Owner Name"
+                    placeholder="Owner Full Name"
                     value={formData.ownerName}
                     onChange={handleChange}
                     required
@@ -158,7 +180,7 @@ export default function RestaurantRegister() {
 
               {/* Phone */}
               <div className="input-group">
-                <label htmlFor="phone">Phone Number</label>
+                <label htmlFor="phone">Phone Number *</label>
                 <div className="input-box">
                   <span className="icon-left">
                     <i className="fa-solid fa-phone"></i>
@@ -166,7 +188,7 @@ export default function RestaurantRegister() {
                   <input
                     type="tel"
                     id="phone"
-                    placeholder="Phone Number"
+                    placeholder="10-digit phone number"
                     maxLength="10"
                     value={formData.phone}
                     onChange={handleChange}
@@ -177,7 +199,7 @@ export default function RestaurantRegister() {
 
               {/* License Number */}
               <div className="input-group">
-                <label htmlFor="licenseNumber">License Number</label>
+                <label htmlFor="licenseNumber">Food License / FSSAI Number *</label>
                 <div className="input-box">
                   <span className="icon-left">
                     <i className="fa-solid fa-id-card"></i>
@@ -185,7 +207,7 @@ export default function RestaurantRegister() {
                   <input
                     type="text"
                     id="licenseNumber"
-                    placeholder="Food License Number"
+                    placeholder="e.g. FSSAI123456789"
                     value={formData.licenseNumber}
                     onChange={handleChange}
                     required
@@ -195,7 +217,7 @@ export default function RestaurantRegister() {
 
               {/* City */}
               <div className="input-group">
-                <label htmlFor="city">City</label>
+                <label htmlFor="city">City *</label>
                 <div className="input-box">
                   <span className="icon-left">
                     <i className="fa-solid fa-location-dot"></i>
@@ -203,7 +225,7 @@ export default function RestaurantRegister() {
                   <input
                     type="text"
                     id="city"
-                    placeholder="City"
+                    placeholder="e.g. Mumbai"
                     value={formData.city}
                     onChange={handleChange}
                     required
@@ -213,11 +235,11 @@ export default function RestaurantRegister() {
 
               {/* Address */}
               <div className="input-group">
-                <label htmlFor="address">Restaurant Address</label>
+                <label htmlFor="address">Restaurant Address *</label>
                 <textarea
                   id="address"
-                  rows="4"
-                  placeholder="Complete Restaurant Address"
+                  rows="3"
+                  placeholder="Complete Street Address & Landmark"
                   value={formData.address}
                   onChange={handleChange}
                   required
@@ -227,7 +249,7 @@ export default function RestaurantRegister() {
               {/* Button */}
               <button type="submit" className="register-btn" disabled={loading}>
                 <i className={`fa-solid ${loading ? 'fa-spinner fa-spin' : 'fa-store'}`}></i>
-                {loading ? 'Registering...' : 'Register Restaurant'}
+                {loading ? 'Registering Restaurant...' : 'Complete Registration'}
               </button>
             </form>
 

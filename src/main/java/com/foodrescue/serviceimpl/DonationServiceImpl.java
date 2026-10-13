@@ -138,9 +138,7 @@ public class DonationServiceImpl implements DonationService {
         updateExpiredDonations();
 
         return donationRepository
-                .findByRestaurantRestaurantIdAndStatusNot(
-                        restaurantId,
-                        DonationStatus.EXPIRED)
+                .findByRestaurantRestaurantId(restaurantId)
                 .stream()
                 .map(this::convertToDTO)
                 .toList();
@@ -152,10 +150,6 @@ public class DonationServiceImpl implements DonationService {
             DonationStatus status) {
 
         updateExpiredDonations();
-
-        if (status == DonationStatus.EXPIRED) {
-            return List.of();
-        }
 
         return donationRepository
                 .findByRestaurantRestaurantIdAndStatus(
@@ -387,10 +381,10 @@ public DonationDTO completeDonation(
               "Donation has expired.");
   }
 
-  if (donation.getStatus() != DonationStatus.DELIVERED) {
+  if (donation.getStatus() != DonationStatus.DELIVERED && donation.getStatus() != DonationStatus.PICKED_UP) {
 
       throw new InvalidRequestException(
-              "Donation is not delivered.");
+              "Donation must be picked up or delivered to complete.");
   }
 
   donation.setStatus(DonationStatus.COMPLETED);

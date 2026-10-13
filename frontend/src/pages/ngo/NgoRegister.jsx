@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import Toast from '../../components/Toast';
 import ngoService from '../../services/ngoService';
 import '../../assets/css/ngo/ngo-register.css';
 
@@ -13,6 +14,7 @@ export default function NgoRegister() {
     address: '',
   });
   const [loading, setLoading] = useState(false);
+  const [toast, setToast] = useState({ message: '', type: '' });
 
   const navigate = useNavigate();
 
@@ -20,50 +22,68 @@ export default function NgoRegister() {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
+  const validate = () => {
+    if (!formData.ngoName.trim()) {
+      setToast({ message: 'Enter NGO Name', type: 'warning' });
+      return false;
+    }
+    if (!formData.ownerName.trim()) {
+      setToast({ message: 'Enter Owner / Representative Name', type: 'warning' });
+      return false;
+    }
+    if (!/^[0-9]{10}$/.test(formData.phone.trim())) {
+      setToast({ message: 'Enter Valid 10-digit Phone Number', type: 'warning' });
+      return false;
+    }
+    if (!formData.registrationNumber.trim()) {
+      setToast({ message: 'Enter NGO Registration Number', type: 'warning' });
+      return false;
+    }
+    if (!formData.city.trim()) {
+      setToast({ message: 'Enter City', type: 'warning' });
+      return false;
+    }
+    if (!formData.address.trim()) {
+      setToast({ message: 'Enter Complete Address', type: 'warning' });
+      return false;
+    }
+    return true;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const userId = Number(localStorage.getItem('userId'));
-    const ngoData = { ...formData, userId };
+    if (!validate()) return;
 
-    if (!ngoData.ngoName.trim()) {
-      alert('Enter NGO Name');
+    const userId = Number(localStorage.getItem('userId'));
+    if (!userId) {
+      setToast({ message: 'User account session not found. Please register/login first.', type: 'error' });
+      setTimeout(() => navigate('/register'), 1500);
       return;
     }
-    if (!ngoData.ownerName.trim()) {
-      alert('Enter Owner Name');
-      return;
-    }
-    if (!/^[0-9]{10}$/.test(ngoData.phone.trim())) {
-      alert('Enter Valid Phone Number');
-      return;
-    }
-    if (!ngoData.registrationNumber.trim()) {
-      alert('Enter NGO Registration Number');
-      return;
-    }
-    if (!ngoData.city.trim()) {
-      alert('Enter City');
-      return;
-    }
-    if (!ngoData.address.trim()) {
-      alert('Enter Address');
-      return;
-    }
+
+    const ngoData = { ...formData, userId };
 
     setLoading(true);
 
     try {
-      const data = await ngoService.registerNgo(ngoData);
+      const data = await ngoService.registerNGO(ngoData);
 
-      localStorage.setItem('ngoId', data.ngoId);
-      localStorage.setItem('ngoName', data.ngoName);
+      if (data && data.ngoId) {
+        localStorage.setItem('ngoId', data.ngoId);
+        localStorage.setItem('ngoName', data.ngoName);
+      }
 
-      alert('NGO Registered Successfully!');
-      navigate('/ngo-dashboard');
+      setToast({ message: 'NGO Registered Successfully!', type: 'success' });
+      setTimeout(() => {
+        navigate('/ngo-dashboard');
+      }, 1200);
     } catch (error) {
       console.error(error);
-      alert(error.response?.data?.message || error.message || 'Registration failed');
+      setToast({
+        message: error.response?.data?.message || error.message || 'NGO registration failed',
+        type: 'error',
+      });
     } finally {
       setLoading(false);
     }
@@ -71,6 +91,8 @@ export default function NgoRegister() {
 
   return (
     <div className="ngo-register-page-wrapper">
+      <Toast toast={toast} onClose={() => setToast({ message: '', type: '' })} />
+
       <div className="register-container">
         {/* LEFT PANEL */}
         <div className="left-panel">
@@ -93,21 +115,21 @@ export default function NgoRegister() {
                 <div className="benefit-icon">
                   <i className="fa-solid fa-box-open"></i>
                 </div>
-                <span>Receive Food Donations</span>
+                <span>Receive Surplus Food</span>
               </div>
 
               <div className="benefit">
                 <div className="benefit-icon">
                   <i className="fa-solid fa-hand-holding-heart"></i>
                 </div>
-                <span>Serve the Needy</span>
+                <span>Feed Communities</span>
               </div>
 
               <div className="benefit">
                 <div className="benefit-icon">
                   <i className="fa-solid fa-people-group"></i>
                 </div>
-                <span>Create Community Impact</span>
+                <span>Coordinate Volunteers</span>
               </div>
             </div>
           </div>
@@ -116,13 +138,13 @@ export default function NgoRegister() {
         {/* RIGHT PANEL */}
         <div className="right-panel">
           <div className="register-card">
-            <h2>NGO Details</h2>
-            <p className="subtitle">Complete your NGO profile to continue.</p>
+            <h2>Complete NGO Profile</h2>
+            <p className="subtitle">Fill in your NGO details to start requesting food.</p>
 
             <form onSubmit={handleSubmit}>
               {/* NGO Name */}
               <div className="input-group">
-                <label htmlFor="ngoName">NGO Name</label>
+                <label htmlFor="ngoName">NGO Name *</label>
                 <div className="input-box">
                   <span className="icon-left">
                     <i className="fa-solid fa-building"></i>
@@ -130,7 +152,7 @@ export default function NgoRegister() {
                   <input
                     type="text"
                     id="ngoName"
-                    placeholder="NGO Name"
+                    placeholder="e.g. Hope Foundation NGO"
                     value={formData.ngoName}
                     onChange={handleChange}
                     required
@@ -140,7 +162,7 @@ export default function NgoRegister() {
 
               {/* Owner Name */}
               <div className="input-group">
-                <label htmlFor="ownerName">Owner Name</label>
+                <label htmlFor="ownerName">Owner / Representative Name *</label>
                 <div className="input-box">
                   <span className="icon-left">
                     <i className="fa-solid fa-user"></i>
@@ -148,7 +170,7 @@ export default function NgoRegister() {
                   <input
                     type="text"
                     id="ownerName"
-                    placeholder="Owner Name"
+                    placeholder="Representative Full Name"
                     value={formData.ownerName}
                     onChange={handleChange}
                     required
@@ -158,7 +180,7 @@ export default function NgoRegister() {
 
               {/* Phone */}
               <div className="input-group">
-                <label htmlFor="phone">Phone Number</label>
+                <label htmlFor="phone">Phone Number *</label>
                 <div className="input-box">
                   <span className="icon-left">
                     <i className="fa-solid fa-phone"></i>
@@ -166,7 +188,7 @@ export default function NgoRegister() {
                   <input
                     type="tel"
                     id="phone"
-                    placeholder="Phone Number"
+                    placeholder="10-digit Phone Number"
                     maxLength="10"
                     value={formData.phone}
                     onChange={handleChange}
@@ -177,7 +199,7 @@ export default function NgoRegister() {
 
               {/* Registration Number */}
               <div className="input-group">
-                <label htmlFor="registrationNumber">Registration Number</label>
+                <label htmlFor="registrationNumber">NGO Registration / Tax ID *</label>
                 <div className="input-box">
                   <span className="icon-left">
                     <i className="fa-solid fa-id-card"></i>
@@ -185,7 +207,7 @@ export default function NgoRegister() {
                   <input
                     type="text"
                     id="registrationNumber"
-                    placeholder="NGO Registration Number"
+                    placeholder="e.g. NGO123456789"
                     value={formData.registrationNumber}
                     onChange={handleChange}
                     required
@@ -195,7 +217,7 @@ export default function NgoRegister() {
 
               {/* City */}
               <div className="input-group">
-                <label htmlFor="city">City</label>
+                <label htmlFor="city">City *</label>
                 <div className="input-box">
                   <span className="icon-left">
                     <i className="fa-solid fa-location-dot"></i>
@@ -213,11 +235,11 @@ export default function NgoRegister() {
 
               {/* Address */}
               <div className="input-group">
-                <label htmlFor="address">NGO Address</label>
+                <label htmlFor="address">NGO Address *</label>
                 <textarea
                   id="address"
-                  rows="4"
-                  placeholder="Complete NGO Address"
+                  rows="3"
+                  placeholder="Complete NGO Office Address"
                   value={formData.address}
                   onChange={handleChange}
                   required
@@ -227,7 +249,7 @@ export default function NgoRegister() {
               {/* Button */}
               <button type="submit" className="register-btn" disabled={loading}>
                 <i className={`fa-solid ${loading ? 'fa-spinner fa-spin' : 'fa-hand-holding-heart'}`}></i>
-                {loading ? 'Registering...' : 'Register NGO'}
+                {loading ? 'Registering NGO...' : 'Register NGO'}
               </button>
             </form>
 

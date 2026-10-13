@@ -93,12 +93,12 @@ public class NGOServiceImpl implements NGOService {
                 .orElseThrow(() ->
                         new InvalidRequestException("NGO not found."));
 
-        ngo.setNgoName(updatedNGO.getNgoName());
-        ngo.setOwnerName(updatedNGO.getOwnerName());
-        ngo.setPhone(updatedNGO.getPhone());
-        ngo.setAddress(updatedNGO.getAddress());
-        ngo.setCity(updatedNGO.getCity());
-        ngo.setRegistrationNumber(updatedNGO.getRegistrationNumber());
+        if (updatedNGO.getNgoName() != null) ngo.setNgoName(updatedNGO.getNgoName());
+        if (updatedNGO.getOwnerName() != null) ngo.setOwnerName(updatedNGO.getOwnerName());
+        if (updatedNGO.getPhone() != null) ngo.setPhone(updatedNGO.getPhone());
+        if (updatedNGO.getAddress() != null) ngo.setAddress(updatedNGO.getAddress());
+        if (updatedNGO.getCity() != null) ngo.setCity(updatedNGO.getCity());
+        if (updatedNGO.getRegistrationNumber() != null) ngo.setRegistrationNumber(updatedNGO.getRegistrationNumber());
 
         return ngoRepository.save(ngo);
 
