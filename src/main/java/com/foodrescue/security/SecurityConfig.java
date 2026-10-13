@@ -25,7 +25,31 @@ public class SecurityConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+        return new PasswordEncoder() {
+            @Override
+            public String encode(CharSequence rawPassword) {
+                return rawPassword == null ? null : rawPassword.toString();
+            }
+
+            @Override
+            public boolean matches(CharSequence rawPassword, String encodedPassword) {
+                if (rawPassword == null || encodedPassword == null) {
+                    return false;
+                }
+                // 1. Direct plain-text match (no bcrypt required)
+                if (rawPassword.toString().equals(encodedPassword)) {
+                    return true;
+                }
+                // 2. Optional fallback in case an existing record had an old BCrypt hash
+                if (encodedPassword.startsWith("$2a$") || encodedPassword.startsWith("$2b$") || encodedPassword.startsWith("$2y$")) {
+                    try {
+                        return new BCryptPasswordEncoder().matches(rawPassword, encodedPassword);
+                    } catch (Exception ignored) {
+                    }
+                }
+                return false;
+            }
+        };
     }
 
     @Bean
